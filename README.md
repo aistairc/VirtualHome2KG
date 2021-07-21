@@ -97,6 +97,9 @@ Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.
 ## Ontology
 We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
 
+## Publications
+under submission
+
 <!--## Knowledge graphs
 As samples, we generate several activity KGs. Please see [here](demo/graph_state_list).
 -->
