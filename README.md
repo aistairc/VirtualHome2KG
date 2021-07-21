@@ -8,7 +8,7 @@ Please see the original repository of the [virtualhome](https://github.com/xavie
 2. Set Up
 3. How to use
 4. Ontology
-5. Knowledge graphs
+<!--5. Knowledge graphs-->
 
 ## Overview
 
@@ -89,9 +89,9 @@ Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.
 ## Ontology
 We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
 
-## Knowledge graphs
+<!--## Knowledge graphs
 As samples, we generate several activity KGs. Please see [here](demo/graph_state_list).
-
+-->
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">VirtualHome2KG</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/aistairc/virtualhome2kg/" property="cc:attributionName" rel="cc:attributionURL">Shusaku Egami, Satoshi Nishimura, Ken Fukuda</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/xavierpuigf/virtualhome" rel="dct:source">https://github.com/xavierpuigf/virtualhome</a>.
