@@ -101,7 +101,8 @@ We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for
 ### International Conference
 under submission
 
-### Domestic Conference
+### Domestic Conference (Non-Peer Reviewed)
+Egami, S., Nishimura, S., Fukuda, K.: Constructing Knowledge Graphs of Daily Activities using 3D Virtual Spaces. The 53rd JSAI-SIG on Semantic Web and Ontology (SIG-SWO), SIG-SWO-053-04, pp.1-10 (2021) (in Japanese)  
 江上周作，西村悟史，福田賢一郎: 3次元仮想空間を用いた日常生活行動のナレッジグラフ構築，第53回人工知能学会セマンティックウェブとオントロジー研究会, SIG-SWO-053-04, pp.1-10 (2021)  
 ```
 @article{weko_11107_1,
