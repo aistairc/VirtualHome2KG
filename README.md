@@ -12,7 +12,7 @@ Please see the original repository of the [virtualhome](https://github.com/xavie
 
 ## Overview
 
-![overview](image/overview/png "Overview of VirtualHome2KG")
+![overview](image/overview.png "Overview of VirtualHome2KG")
 
 ## Set Up
 
