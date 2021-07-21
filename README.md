@@ -1,250 +1,97 @@
-[![docs](https://img.shields.io/badge/docs-updated-brightgreen)](http://virtual-home.org/documentation/)
-
-# VirtualHome
-**VirtualHome** is a platform to simulate complex household activities via programs. Key aspect of VirtualHome is that it allows complex interactions with the environment, such as picking up objects, switching on/off appliances, opening appliances, etc. Our simulator can easily be called with a Python API: write the activity as a simple sequence of instructions which then get rendered in VirtualHome. You can choose between different agents and environments, as well as modify environments on the fly. You can also stream different ground-truth such as time-stamped actions, instance/semantic segmentation, and optical flow and depth. The platform allows to simulate multi-agent activities and can serve as an environment to train agents.
-
-Check out more details of the environmnent and platform at [**virtual-home.org**](http://virtual-home.org). 
-
-<p align="center">
-  <img width="460" height="300" src="assets/vh_intro.gif">
-</p>
-
-## What is New
-The new version of VirtualHome (VH-Social) is out! Here is what is new.
-* [April 11th] We added new documentation! Check it out at http://virtual-home.org/documentation
-* VirtualHome now supports multiple agents and a *skip_animation* mode, to use the environment to train RL models.
-* We include OpenAI Gym like environments to train RL agents with VirtualHome. Check out the [unity_environment.py](simulation/environment/unity_environment.py) class.
-* API to add characters in the scene and fixed cameras, and record from those cameras
-
-
+# VirtualHome2KG
+VirtualHome2KG is a system for constructing and augmenting knowledge graphs (KGs) of daily living activities using virtual space. We also provide an ontology to describe the structure of the KGs.
+We used [VirtualHome](http://virtual-home.org/) as a platform of virtual space simulation. Thus, this repository is an extension of the [virtualhome](https://github.com/xavierpuigf/virtualhome).
+Please see the original repository of the [virtualhome](https://github.com/xavierpuigf/virtualhome) for details of the Unity simulation. 
 
 ## Contents
-
 1. Overview
 2. Set Up
-3. Generating Videos/Keyframes
-4. Dataset 
-5. Modify VirtualHome
-6. Citation
-7. Contributors
-
+3. How to use
+4. Ontology
+5. Knowledge graphs
 
 ## Overview
-Activities in VirtualHome are represented through two components: *programs* representing the sequence of actions that compose an activity, and *graphs* representing a definition of the environment where the activity takes place. Given a program and a graph, the simulator executes the program, generating a video of the activity or a sequence of graphs representing how the environment evolves as the activity takes place. To this end, VirtualHome includes two simulators: the *Unity Simulator* and *Evolving Graph*.
 
-#### Unity Simulator 
-This simulator is built in Unity and allows generating videos of activities. To use this simulator, you will need to download the appropiate executable and run it with the [Python API](simulation/unity_simulator/). You can check a demo of the simulator in [demo/unity_demo.ipynb](demo/unity_demo.ipynb)
-
-#### Evolving Graph
-This simulator runs fully in python and allows to generate a sequence of graphs when a program is executed. You can run it in [simulation/evolving_graph](simulation/evolving_graph). Note that some of the objects and actions in this simulator are not supported yet in Unity Simulator.
-
+![overview](https://www.dropbox.com/s/khdm3ks4io826f6/overview.png?raw=1 "Overview of VirtualHome2KG")
 
 ## Set Up
 
-
-### Clone repository and install the dependencies
-Note that this code base is based on Python 3
 ```bash
-git clone https://github.com/xavierpuigf/virtualhome.git
+git clone https://github.com/aistairc/virtualhome2kg.git
+```
+We provide VirtualHome2KG as [Jupyter](https://jupyter.org/) notebooks. If you want to run the tools, install Jupyter and run it on your host.
+<br/>
+First of all, you need to build an environment where VirtualHome can run.
+```bash
 pip install -r requirements.txt
 ```
-We also provide a [Jupyter](https://jupyter.org/) notebook with a demo and starting code. If you want to run the demo, [install Jupyter](https://jupyter.org/install.html) and run it on your host. If you are new to Jupyter, see [Running the Jupyter Notebook](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html) for a walkthrough of how to use this tool.
+Second, you need to download the VirtualHome Unity Simulater and move it under `simulation/` (for MacOS) or `simulation/unity_simulator` (Windows).  
+Please see the below link.  
+[Download Unity Simulator
+](https://github.com/xavierpuigf/virtualhome/blob/master/README.md#download-unity-simulator)  
 
-### Download Unity Simulator
-Download the VirtualHome UnitySimulator executable and move it under `simulation/unity_simulator`.
+Our experimental conditions:
+- MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)
+- macOS Catalina (10.15.7)
+- 2.3 GHz Quad core Intel Core i7
+- 32GB 3733 MHz LPDDR4X
+- Intel Iris Plus Graphics 1536 MB
+  
+If you want to generate knowledge graphs based on the VirtualHome's activities, you need to downlowd the [dataset](https://github.com/xavierpuigf/virtualhome/tree/master/simulation#dataset).
 
-- [Download](http://virtual-home.org/release/simulator/last_release/linux_exec.zip) Linux x86-64 version.
-- [Download](http://virtual-home.org/release/simulator/last_release//macos_exec.zip) Mac OS X version.
-- [Download](http://virtual-home.org/release/simulator/last_release/windows_exec.zip) Windows version.
+## How to Use
 
-
-### Test simulator
-
-To test the simulator in a local machine, double click the executable, select a resolution and screen size and press `Play!`. Remember to select the option `Windowed` to make sure the simulator does not take the whole screen. The screenshot below shows our recommended configuration.
-
-<img src="assets/simulator.png" width=70%>
-
-
-Once the simulator is started, run the demo in [demo/unity_demo.ipynb](demo/unity_demo.ipynb). 
-
-If you do not have a monitor or want to test the simulator remotely, you can either use [Docker](docker) or use an X server (find the installation instructions in [this medium post](https://towardsdatascience.com/how-to-run-unity-on-amazon-cloud-or-without-monitor-3c10ce022639)). When running the executable with an X server, use -batchmode. For Linux, you would do:
-
-First run the X server on a terminal. You will have to specify which display you want to use, and on which GPUs. By default it will use all the gpus available
+### Simulation and export
+First, you have to run the Unity simulator: [https://github.com/xavierpuigf/virtualhome#download-unity-simulator](https://github.com/xavierpuigf/virtualhome#download-unity-simulator).  
+Second, you have to download the dataset of the VirtualHome from [here](http://virtual-home.org/release/programs/programs_processed_precond_nograb_morepreconds.zip), and move them to [dataset/](dataset/).  
+<!--Script:  
 ```bash
-sudo python helper_scripts/startx.py $display_num
-```
-
-On a separate terminal, launch the executable
+cd scripts
+python simulation_export.py [activity class (e.g., HygieneStyling, BedTimeSleep, and EatingDrinking)]
+```-->
+We provide two scripts for generating activity graphs (Note that the activity graph is not a knowledge graph. This is the simulation results described in JSON format).
+The first one generates the activity graphs without recording objects' 3D coordinates and actions' duration (execution time). This script simulates without rendering on the Unity simulator to generate a lot of data in a short time.  
+Jupyter notebook:  
+Run [demo/generate_activitiy_graph.ipynb](demo/generate_activity_graph.ipynb)
+  
+The second one generates the activity graphs containing 3D coordinates and duration. This version simulates using the Unity simulator. Therefore, it takes a lot of time to generate the data. In addition, the executability of the simulation depends on the VirtualHome's Unity simulator.  
+Jupyter notebook:  
+Run [demo/generate_activitiy_graphi_with_bbox.ipynb](demo/generate_activity_graph_with_bbox.ipynb)
+### Generate knowledge graphs
+<!--Script:  
 ```bash
-DISPLAY=:display_num ./{path_sim}/{exec_file}.x86_64 -batchmode
-```
-
-For Linux, you can also launch the UnityCommunication specifying an executable file. This will directly open the executable on the right sceen. You can do it as follows:
-
-After running the X server, run:
-```python
-from simulation.unity_simulator import comm_unity
-comm = comm_unity.UnityCommunication(file_name=file_name, port={your_port}, x_display={your_display})
-```
-It will open an executable and create a communication object to render scripts or simulate actvities. You can open multiple executables at the same time, to train models or generate data using multiple processes.
-
-### Docker
-You can also run Unity Simulator using Docker. You can find how to set it up [here](docker).
-
-
-## Generating Videos and Snapshots
-
-VirtualHome *Unity Simulator* allows generating videos corresponding to household activities. In addition, it is possible to use *Evolving Graph* simulator to obtain the environment for each execution step and use *UnitySimulator* to generate snapshots of the environment at each step.
-
-
-### Generate videos
-
-Open the simulator and run:
-
+cd scripts
+python create_rdf.py [activity name (folder name of the simulation results)]
+```-->
+Jupyter notebook:  
+Run [demo/create_rdf.ipyb](demo/create_rdf.ipynb)
+  
+If you want to generate RDF file containing objects' bbox.  
+Jupyter notebook:  
+Run [demo/create_rdf_with_bbox.ipyb](demo/create_rdf_with_bbox.ipynb)
+### Generate activity sequences
+<!--Script:  
 ```bash
-cd demo/
-python generate_video.py
-```
+cd scripts
+python markov_chain.py
+```-->
+Jupyter notebook:  
+Run [demo/markov_chain.ipynb](demo/markov_chain.ipynb)
 
+### Augment knowledge graphs
+<!--```bash
+cd scripts
+python behavioral_data_augmentation.py
+```-->
+Jupyter notebook:  
+Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.ipynb)
 
-### Generate snapshots
+## Ontology
+We designed the ontology for the VirtualHome2KG. Please see [here](https://github.com/aistairc/virtualhome2kg/tree/main/ontology/) for learing more about our ontology.
 
-Open the simulator and run:
+## Knowledge graphs
+As samples, we generate several activity KGs. Please see [here](demo/graph_state_list).
 
-```bash
-cd demo/
-python generate_snapshots.py
-```
-A grid of snapshots for the given script will be generated and saved in [demo/snapshot_test.png](demo/snapshot_test.png).
+## License
 
-## Dataset
-
-We collected a dataset of programs and augmented them with graphs using the Evolving Graph simulator. You can download them [here](http://virtual-home.org/release/programs/programs_processed_precond_nograb_morepreconds.zip). 
-Once downloaded and unzipped, move the programs into the `dataset` folder. You can do all this by executing the script
-```bash
-./helper_scripts/download_dataset.sh
-```
-The dataset should follow the following structure:
-
-```
-dataset
-└── programs_processed_precond_nograb_morepreconds
-	|── initstate
-	├── withoutconds
-	├── executable_programs
-	|   ├── TrimmedTestScene7_graph
-	|	└── ...
-	└── state_list
-		├── TrimmedTestScene7_graph
-	   	└── ...	
-```
-
-The folders `withoutconds` and `initstate` contain the original programs and pre-conditions. 
-
-When a script is executed in an environment, the script changes by aligning the original objects with instances in the environment. You can view the resulting script in `executable_programs/{environment}/{script_name}.txt`.
-
-To view the graph of the environment, and how it changes throughout the script execution of a program, check   `state_list/{environment}/{script_name}.json`.
-
-You can find more details of the programs and environment graphs in [dataset/README.md](dataset/README.md).
-
-### Script Augmentation
-
-
-In *Synthesizing Environment-Aware Activities via Activity Sketches*, 
-we augment the scripts with two knowledge bases: `KB-RealEnv` and `KB-ExceptonHandler`.
-You can download the augmented scripts in [KB-RealEnv](http://virtual-home.org/release/programs/augment_location.zip) and [KB-ExceptionHandler](http://virtual-home.org/release/programs/augment_exception.zip).
-
-Here, we provide the code to augment the sripts:
-
-#### Augment with `KB-RealEnv`
-
-```bash
-cd dataset_utils
-python augment_dataset_locations.py
-```
-
-
-#### Augment with `KB-ExceptionHandler`
-
-```bash
-cd dataset_utils
-python augment_dataset_exceptions.py
-```
-### Original Collected and Scripted Programs
-We originally collected a set of programs to predict from language descriptions, and generated a larger of programs via a scripted language. Those programs are described [here](http://virtual-home.org/paper/virtualhome.pdf) as VirtualHome Activity (collected programs) ActivityPrograms (scripted programs). You can download them here:
-
-- [Download](http://virtual-home.org/release/programs/virtualhome_cvpr18/real.zip) VirtualHome Activity.
-- [Download](http://virtual-home.org/release/programs/virtualhome_cvpr18/synthetic.zip) ActivityPrograms.
-
-### Resources
-
-To do the above generation and augmentation, some valuable resource files are used to set the properties of objects, set the affordance of objects, etc.
-Check [resources/README.md](resources/README.md) for more details.
-
-
-## Modify VirtualHome
-If you would like to contribute to VirtualHome, or modify the simulator for your research needs. Check out the repository with the [Unity Source Code](https://github.com/xavierpuigf/virtualhome_unity). You will need to download the Unity Editor and build your own executable after having made the updates.
-
-
-## Citation
-VirtualHome has been used in:
-
-- VirtualHome: Simulating HouseHold Activities via Programs. [PDF](https://arxiv.org/pdf/1806.07011.pdf) <br/>
-X. Puig*, K. Ra*, M. Boben*, J. Li, T. Wang, S. Fidler, A. Torralba.<br/>
-CVPR2018.
-
-
-- Synthesizing Environment-Aware Activities via Activity Sketches.<br/>
-A. Liao*, X. Puig*, M. Boben, A. Torralba, S. Fidler.<br/>
-CVPR2019.
-
-
-- Watch-and-Help: A Challenge for Social Perception and Human-AI Collaboration.<br/>
-X. Puig, T. Shu, S. Li, Z. Wang, J. Tenenbaum, S. Fidler, A. Torralba.
-
-
-If you plan to use the simulator, please consider citing this.
-
-```
-@inproceedings{puig2018virtualhome,
-  title={Virtualhome: Simulating household activities via programs},
-  author={Puig, Xavier and Ra, Kevin and Boben, Marko and Li, Jiaman and Wang, Tingwu and Fidler, Sanja and Torralba, Antonio},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={8494--8502},
-  year={2018}
-}
-```
-
-```
-@InProceedings{Liao_2019_CVPR,
-author = {Liao, Yuan-Hong and Puig, Xavier and Boben, Marko and Torralba, Antonio and Fidler, Sanja},
-title = {Synthesizing Environment-Aware Activities via Activity Sketches},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2019}
-}
-```
-
-```
-@misc{puig2020watchandhelp,
-      title={Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration}, 
-      author={Xavier Puig and Tianmin Shu and Shuang Li and Zilin Wang and Joshua B. Tenenbaum and Sanja Fidler and Antonio Torralba},
-      year={2020},
-      eprint={2010.09890},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI}
-}
-```
-## Contributors
-The VirtualHome API and code has been developed by the following people.
-
-- Marko Boben
-- Xavier Puig
-- Kevin Ra
-- Zilin Wang
-- Shuang Li
-- Tianmin Shu
-- Andrew Liao
-
-
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">VirtualHome2KG</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/aistairc/virtualhome2kg/" property="cc:attributionName" rel="cc:attributionURL">Shusaku Egami, Satoshi Nishimura, Ken Fukuda</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/xavierpuigf/virtualhome" rel="dct:source">https://github.com/xavierpuigf/virtualhome</a>.

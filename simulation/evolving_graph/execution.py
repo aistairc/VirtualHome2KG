@@ -268,14 +268,14 @@ class SitExecutor(ActionExecutor):
             info.object_found_error()
         elif self.check_sittable(state, node, info, char_index):
             char_node = _get_character_node(state, char_index)
-            new_char_node = char_node.copy()
-            new_char_node.states.discard(State.LYING)
-            new_char_node.states.add(State.SITTING)
+            #new_char_node = char_node.copy()
+            char_node.states.discard(State.LYING)
+            char_node.states.add(State.SITTING)
             if modify:
                 yield state.change_state(
                     [AddEdges(CharacterNode(char_index), Relation.ON, NodeInstance(node)),
                      AddEdges(CharacterNode(char_index), Relation.FACING, RelationFrom(node, Relation.FACING)),
-                     ChangeNode(new_char_node)]
+                     ChangeNode(char_node)]
                 )
             else:
                 yield state
@@ -308,11 +308,11 @@ class StandUpExecutor(ActionExecutor):
         info.set_current_line(script[0])
         char_node = _get_character_node(state, char_index)
         if State.SITTING in char_node.states or State.LYING in char_node.states:
-            new_char_node = char_node.copy()
-            new_char_node.states.discard(State.SITTING)
-            new_char_node.states.discard(State.LYING)
+            #new_char_node = char_node.copy()
+            char_node.states.discard(State.SITTING)
+            char_node.states.discard(State.LYING)
             if modify:
-                yield state.change_state([ChangeNode(new_char_node)])
+                yield state.change_state([ChangeNode(char_node)])
             else:
                 yield state
         else:
@@ -804,13 +804,13 @@ class LieExecutor(ActionExecutor):
             info.object_found_error()
         elif self.check_lieable(state, node, info, char_index):
             char_node = _get_character_node(state, char_index)
-            new_char_node = char_node.copy()
-            new_char_node.states.discard(State.SITTING)
-            new_char_node.states.add(State.LYING)
+            #new_char_node = char_node.copy()
+            char_node.states.discard(State.SITTING)
+            char_node.states.add(State.LYING)
             if modify:
                 yield state.change_state(
                     [AddEdges(CharacterNode(char_index), Relation.ON, NodeInstance(node)),
-                     ChangeNode(new_char_node)]
+                     ChangeNode(char_node)]
                 )
             else:
                 yield state

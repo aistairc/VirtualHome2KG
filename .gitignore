@@ -169,3 +169,15 @@ fabric.properties
 test*/
 test*.py
 data/*
+
+# virtualhome
+dataset/*
+simulation/exec_mac*
+demo/graph_state_list/*
+demo/_graph_state_list/*
+demo/graph_state_list_with_bbox/*
+demo/rdf/*
+demo/_rdf/*
+demo/rdf_with_bbox/*
+simulation/Output/*
+simulation/simulation
