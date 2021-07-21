@@ -87,7 +87,7 @@ Jupyter notebook:
 Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.ipynb)
 
 ## Ontology
-We designed the ontology for the VirtualHome2KG. Please see [here](https://github.com/aistairc/virtualhome2kg/tree/main/ontology/) for learing more about our ontology.
+We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
 
 ## Knowledge graphs
 As samples, we generate several activity KGs. Please see [here](demo/graph_state_list).
