@@ -98,7 +98,24 @@ Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.
 We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
 
 ## Publications
+### International Conference
 under submission
+
+### Domestic Conference
+江上周作，西村悟史，福田賢一郎: 3次元仮想空間を用いた日常生活行動のナレッジグラフ構築，第53回人工知能学会セマンティックウェブとオントロジー研究会, SIG-SWO-053-04, pp.1-10 (2021)  
+```
+@article{weko_11107_1,
+   author    = "江上,周作 and 西村,悟史 and 福田,賢一郎",
+   title     = "3次元仮想空間を用いた日常生活行動のナレッジグラフ構築",
+   journal   = "人工知能学会研究会資料",
+   year      = "2021",
+   volume    = "53",
+   number    = "4",
+   pages     = "04-01--04-10",
+   month     = "mar"
+}
+```
+
 
 <!--## Knowledge graphs
 As samples, we generate several activity KGs. Please see [here](demo/graph_state_list).
