@@ -32,8 +32,9 @@ Please see the below link.
 
 Our experimental conditions:  
 Local machine  
-- MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)
-- macOS Catalina (10.15.7)
+- Python: anaconda3-2020.07
+- PC: MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)
+- OS: macOS Catalina (10.15.7)
 - CPU: 2.3 GHz Quad core Intel Core i7
 - Memory: 32GB 3733 MHz LPDDR4X
 - GPU: Intel Iris Plus Graphics 1536 MB
