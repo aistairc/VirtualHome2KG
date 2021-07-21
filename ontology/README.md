@@ -1,6 +1,6 @@
 # Ontology
 
-The [vh2kg_ontology.ttl](https://github.com/aistairc/virtualhome2kg/blob/main/ontology/vh2kg_ontology.ttl) is our ontology. 
+The [vh2kg_ontology.ttl](vh2kg_ontology.ttl) is our ontology. 
 Following figure shows the summarized class relation diagram of the designed ontology.
 
 ![ontology](https://www.dropbox.com/s/h6fmzn1wf65qtwc/class_diagram.png?raw=1 "Ontology of VirtualHome2KG")
