@@ -31,11 +31,18 @@ Please see the below link.
 ](https://github.com/xavierpuigf/virtualhome/blob/master/README.md#download-unity-simulator)  
 
 Our experimental conditions:
+Local machine  
 - MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)
 - macOS Catalina (10.15.7)
-- 2.3 GHz Quad core Intel Core i7
-- 32GB 3733 MHz LPDDR4X
-- Intel Iris Plus Graphics 1536 MB
+- CPU: 2.3 GHz Quad core Intel Core i7
+- RAM: 32GB 3733 MHz LPDDR4X
+- GPU: Intel Iris Plus Graphics 1536 MB
+  
+Server  
+- Triplestore: GraphDB SE 9.6 by Ontotext
+- OS: Windows 10 for Workstation
+- CPU: Xeon Gold 5215L 10 cores
+- RAM: 2.15TB
   
 If you want to generate knowledge graphs based on the VirtualHome's activities, you need to downlowd the [dataset](https://github.com/xavierpuigf/virtualhome/tree/master/simulation#dataset).
 
