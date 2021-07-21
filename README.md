@@ -30,7 +30,7 @@ Please see the below link.
 [Download Unity Simulator
 ](https://github.com/xavierpuigf/virtualhome/blob/master/README.md#download-unity-simulator)  
 
-Our experimental conditions:
+Our experimental conditions:  
 Local machine  
 - MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)
 - macOS Catalina (10.15.7)
