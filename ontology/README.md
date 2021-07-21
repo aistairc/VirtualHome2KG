@@ -3,7 +3,7 @@
 The [vh2kg_ontology.ttl](vh2kg_ontology.ttl) is our ontology. 
 Following figure shows the summarized class relation diagram of the designed ontology.
 
-![ontology](https://www.dropbox.com/s/h6fmzn1wf65qtwc/class_diagram.png?raw=1 "Ontology of VirtualHome2KG")
+![ontology](inage/class_diagram.png "Ontology of VirtualHome2KG")
 
 We reused a part of the [HomeOntology](https://github.com/valexande/HomeOntology) for representing activities. 
 
