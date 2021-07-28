@@ -98,7 +98,7 @@ Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.
 We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
 
 ## Publications
-### International Conference
+### International Conference (Peer Reviewed)
 under submission
 
 ### Domestic Conference (Non-Peer Reviewed)
