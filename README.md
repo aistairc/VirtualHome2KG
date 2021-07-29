@@ -99,7 +99,7 @@ We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for
 
 ## Publications
 ### International Conference (Peer Reviewed)
-under submission
+Egami, S., Nishimura, S., Fukuda, K.: VirtualHome2KG: Constructing and Augmenting Knowledge Graphs of Daily Activities Using Virtual Space. The 20th International Semantic Web Conference, Posters &amp; Demos Track (to appear)
 
 ### Domestic Conference (Non-Peer Reviewed)
 Egami, S., Nishimura, S., Fukuda, K.: Constructing Knowledge Graphs of Daily Activities using 3D Virtual Spaces. The 53rd JSAI-SIG on Semantic Web and Ontology (SIG-SWO), SIG-SWO-053-04, pp.1-10 (2021) (in Japanese)  
