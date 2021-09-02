@@ -1,4 +1,5 @@
 @prefix : <http://example.org/virtualhome2kg/ontology/> .
+@prefix ac: <http://example.org/virtualhome2kg/ontology/action/> .
 @prefix ho: <http://www.owl-ontologies.com/VirtualHome.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -38,13 +39,12 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
 
 ###  http://example.org/virtualhome2kg/ontology/action
 :action rdf:type owl:ObjectProperty ;
-        rdfs:domain ho:Activity ;
+        rdfs:domain :Event ;
         rdfs:range :Action .
 
 
 ###  http://example.org/virtualhome2kg/ontology/activity
 :activity rdf:type owl:ObjectProperty ;
-          rdfs:domain :Character ;
           rdfs:range ho:Activity .
 
 
@@ -100,6 +100,23 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
         rdfs:comment "there is an edge <object1, facing, object2> if object2 is lookable, is visible from object1, and the distance between the centers is < 5 units (~meters). If object1 is a sofa or a chair it should also be turned towards object2" .
 
 
+###  http://example.org/virtualhome2kg/ontology/from
+:from rdf:type owl:ObjectProperty ;
+      rdfs:domain :Event .
+
+
+###  http://example.org/virtualhome2kg/ontology/hasActivity
+:hasActivity rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://plod.info/rdf/Episode> ;
+             rdfs:range ho:Activity .
+
+
+###  http://example.org/virtualhome2kg/ontology/hasEvent
+:hasEvent rdf:type owl:ObjectProperty ;
+          rdfs:domain ho:Activity ;
+          rdfs:range :Event .
+
+
 ###  http://example.org/virtualhome2kg/ontology/holds_lh
 :holds_lh rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :relatedShape ;
@@ -129,19 +146,18 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
            rdfs:range :Object .
 
 
-###  http://example.org/virtualhome2kg/ontology/nextAction
-:nextAction rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :relatedAction ;
-            owl:inverseOf :previousAction ;
-            rdfs:domain :Action ;
-            rdfs:range :Action .
-
-
 ###  http://example.org/virtualhome2kg/ontology/nextActivity
 :nextActivity rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :relatedActivity ;
               rdfs:domain ho:Activity ;
               rdfs:range ho:Activity .
+
+
+###  http://example.org/virtualhome2kg/ontology/nextEvent
+:nextEvent rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :relatedEvent ;
+           rdfs:domain :Event ;
+           rdfs:range :Event .
 
 
 ###  http://example.org/virtualhome2kg/ontology/nextSituation
@@ -173,16 +189,20 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
         rdfs:range :Situation .
 
 
-###  http://example.org/virtualhome2kg/ontology/previousAction
-:previousAction rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :relatedAction ;
-                rdfs:domain :Action ;
-                rdfs:range :Action .
+###  http://example.org/virtualhome2kg/ontology/place
+:place rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/virtualhome2kg/ontology/previousActivity
 :previousActivity rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :relatedActivity .
+
+
+###  http://example.org/virtualhome2kg/ontology/previousEvent
+:previousEvent rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :relatedEvent ;
+               rdfs:domain :Event ;
+               rdfs:range :Event .
 
 
 ###  http://example.org/virtualhome2kg/ontology/previousSituation
@@ -199,14 +219,13 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
                rdfs:range :State .
 
 
-###  http://example.org/virtualhome2kg/ontology/relatedAction
-:relatedAction rdf:type owl:ObjectProperty ;
-               rdfs:range :Action .
-
-
 ###  http://example.org/virtualhome2kg/ontology/relatedActivity
 :relatedActivity rdf:type owl:ObjectProperty ;
                  rdfs:range ho:Activity .
+
+
+###  http://example.org/virtualhome2kg/ontology/relatedEvent
+:relatedEvent rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/virtualhome2kg/ontology/relatedShape
@@ -241,6 +260,10 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
 :state rdf:type owl:ObjectProperty ;
        rdfs:domain :State ;
        rdfs:range :StateType .
+
+
+###  http://example.org/virtualhome2kg/ontology/to
+:to rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/virtualhome2kg/ontology/virtualHome
@@ -314,134 +337,13 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
            rdfs:comment "This class means properties of objects. We do not use 'property' as a class name because 'property' means edges of RDF graphs." .
 
 
-###  http://example.org/virtualhome2kg/ontology/Break
-:Break rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Brush
-:Brush rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Call
-:Call rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
 ###  http://example.org/virtualhome2kg/ontology/Character
 :Character rdf:type owl:Class ;
            rdfs:subClassOf :Object .
 
 
-###  http://example.org/virtualhome2kg/ontology/Climb
-:Climb rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Close
-:Close rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Cover
-:Cover rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Crawl
-:Crawl rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Cut
-:Cut rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Dance
-:Dance rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Dial
-:Dial rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Drink
-:Drink rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Drop
-:Drop rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Eat
-:Eat rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Enter
-:Enter rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Find
-:Find rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Flush
-:Flush rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Fold
-:Fold rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Grab
-:Grab rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Greet
-:Greet rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Jump
-:Jump rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Laugh
-:Laugh rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Leave
-:Leave rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Lie
-:Lie rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/LookAt
-:LookAt rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Move
-:Move rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
+###  http://example.org/virtualhome2kg/ontology/Event
+:Event rdf:type owl:Class .
 
 
 ###  http://example.org/virtualhome2kg/ontology/Object
@@ -449,154 +351,9 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
         rdfs:comment "The class with the object instances from the household environment." .
 
 
-###  http://example.org/virtualhome2kg/ontology/Open
-:Open rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Play
-:Play rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PlugIn
-:PlugIn rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PlugOut
-:PlugOut rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PointAt
-:PointAt rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Pour
-:Pour rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Pull
-:Pull rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Push
-:Push rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Put
-:Put rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PutBack
-:PutBack rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PutIn
-:PutIn rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PutObjBack
-:PutObjBack rdf:type owl:Class ;
-            rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PutOff
-:PutOff rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/PutOn
-:PutOn rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Read
-:Read rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Rinse
-:Rinse rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Run
-:Run rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Scrub
-:Scrub rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Sew
-:Sew rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Shake
-:Shake rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Sing
-:Sing rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Sit
-:Sit rdf:type owl:Class ;
-     rdfs:subClassOf :Action .
-
-
 ###  http://example.org/virtualhome2kg/ontology/Situation
 :Situation rdf:type owl:Class ;
            rdfs:comment "The class which describes the situation of the entire home at a certain moment." .
-
-
-###  http://example.org/virtualhome2kg/ontology/Sleep
-:Sleep rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Soak
-:Soak rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Speak
-:Speak rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Spit
-:Spit rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Spread
-:Spread rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Squeeze
-:Squeeze rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/StandUp
-:StandUp rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
 
 
 ###  http://example.org/virtualhome2kg/ontology/State
@@ -608,118 +365,8 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 :StateType rdf:type owl:Class .
 
 
-###  http://example.org/virtualhome2kg/ontology/Stir
-:Stir rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Stretch
-:Stretch rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Sweep
-:Sweep rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/SwitchOff
-:SwitchOff rdf:type owl:Class ;
-           rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/SwitchOn
-:SwitchOn rdf:type owl:Class ;
-          rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Talk
-:Talk rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Text
-:Text rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Throw
-:Throw rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Touch
-:Touch rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/TurnTo
-:TurnTo rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Type
-:Type rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Uncover
-:Uncover rdf:type owl:Class ;
-         rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Unfold
-:Unfold rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Unwrap
-:Unwrap rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Vacuum
-:Vacuum rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
 ###  http://example.org/virtualhome2kg/ontology/VirtualHome
 :VirtualHome rdf:type owl:Class .
-
-
-###  http://example.org/virtualhome2kg/ontology/Wait
-:Wait rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/WakeUp
-:WakeUp rdf:type owl:Class ;
-        rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Walk
-:Walk rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Watch
-:Watch rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Wipe
-:Wipe rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Wrap
-:Wrap rdf:type owl:Class ;
-      rdfs:subClassOf :Action .
-
-
-###  http://example.org/virtualhome2kg/ontology/Write
-:Write rdf:type owl:Class ;
-       rdfs:subClassOf :Action .
 
 
 ###  http://plod.info/rdf/Episode
@@ -727,24 +374,28 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#Activity
-ho:Activity rdf:type owl:Class ;
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty :action ;
-                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass :Action
-                            ] .
+ho:Activity rdf:type owl:Class .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#BedTimeSleep
 ho:BedTimeSleep rdf:type owl:Class ;
                 owl:equivalentClass [ owl:intersectionOf ( ho:Activity
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty :action ;
-                                                             owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                  owl:unionOf ( :Sleep
-                                                                                                :WakeUp
-                                                                                              )
-                                                                                ]
+                                                           [ rdf:type owl:Class ;
+                                                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :hasEvent ;
+                                                                             owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty :action ;
+                                                                                                  owl:hasValue ac:sleep
+                                                                                                ]
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :hasEvent ;
+                                                                             owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty :action ;
+                                                                                                  owl:hasValue ac:wakeUp
+                                                                                                ]
+                                                                           ]
+                                                                         )
                                                            ]
                                                          ) ;
                                       rdf:type owl:Class
@@ -777,13 +428,22 @@ circumstances.""" .
 ###  http://www.owl-ontologies.com/VirtualHome.owl#EatingDrinking
 ho:EatingDrinking rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( ho:Activity
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :action ;
-                                                               owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                    owl:unionOf ( :Drink
-                                                                                                  ho:Eat
-                                                                                                )
-                                                                                  ]
+                                                             [ rdf:type owl:Class ;
+                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :hasEvent ;
+                                                                               owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty :action ;
+                                                                                                    owl:hasValue ac:drink
+                                                                                                  ]
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :hasEvent ;
+                                                                               owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty :action ;
+                                                                                                    owl:hasValue ac:eat
+                                                                                                  ]
+                                                                             ]
+                                                                           )
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
@@ -4833,6 +4493,391 @@ x3do:X3DField rdf:type owl:Class ;
 
 ###  http://example.org/virtualhome2kg/ontology/Watch
 :Watch rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/virtualhome2kg/ontology/activity0
+:activity0 rdf:type owl:NamedIndividual ;
+           :hasEvent :event0 .
+
+
+###  http://example.org/virtualhome2kg/ontology/event0
+:event0 rdf:type owl:NamedIndividual ;
+        :action ac:wakeUp .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/break
+ac:break rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/brush
+ac:brush rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/call
+ac:call rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/climb
+ac:climb rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/close
+ac:close rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/cover
+ac:cover rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/crawl
+ac:crawl rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/cut
+ac:cut rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/dance
+ac:dance rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/dial
+ac:dial rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/drink
+ac:drink rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/drop
+ac:drop rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/eat
+ac:eat rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/enter
+ac:enter rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/find
+ac:find rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/flush
+ac:flush rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/fold
+ac:fold rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/grab
+ac:grab rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/greet
+ac:greet rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/jump
+ac:jump rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/laugh
+ac:laugh rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/leave
+ac:leave rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/lie
+ac:lie rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/lookAt
+ac:lookAt rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/move
+ac:move rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/open
+ac:open rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/play
+ac:play rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/plugIn
+ac:plugIn rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/plugOut
+ac:plugOut rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/pointAt
+ac:pointAt rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/pour
+ac:pour rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/pull
+ac:pull rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/push
+ac:push rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/put
+ac:put rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/putBack
+ac:putBack rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/putIn
+ac:putIn rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/putObjBack
+ac:putObjBack rdf:type owl:NamedIndividual ,
+                       :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/putOff
+ac:putOff rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/putOn
+ac:putOn rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/read
+ac:read rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/rinse
+ac:rinse rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/run
+ac:run rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/scrub
+ac:scrub rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/sew
+ac:sew rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/shake
+ac:shake rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/sing
+ac:sing rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/sit
+ac:sit rdf:type owl:NamedIndividual ,
+                :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/sleep
+ac:sleep rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/soak
+ac:soak rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/speak
+ac:speak rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/spit
+ac:spit rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/spread
+ac:spread rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/squeeze
+ac:squeeze rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/standUp
+ac:standUp rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/stir
+ac:stir rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/stretch
+ac:stretch rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/sweep
+ac:sweep rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/switchOff
+ac:switchOff rdf:type owl:NamedIndividual ,
+                      :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/switchOn
+ac:switchOn rdf:type owl:NamedIndividual ,
+                     :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/talk
+ac:talk rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/text
+ac:text rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/throw
+ac:throw rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/turnTo
+ac:turnTo rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/type
+ac:type rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/uncover
+ac:uncover rdf:type owl:NamedIndividual ,
+                    :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/unfold
+ac:unfold rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/unwrap
+ac:unwrap rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/vacuum
+ac:vacuum rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/wait
+ac:wait rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/wakeUp
+ac:wakeUp rdf:type owl:NamedIndividual ,
+                   :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/walk
+ac:walk rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/watch
+ac:watch rdf:type owl:NamedIndividual ,
+                  :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/wipe
+ac:wipe rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/wrap
+ac:wrap rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
+###  http://example.org/virtualhome2kg/ontology/action/write
+ac:write rdf:type owl:NamedIndividual ,
+                  :Action .
 
 
 ###  http://www.w3.org/2006/time#unitSecond
