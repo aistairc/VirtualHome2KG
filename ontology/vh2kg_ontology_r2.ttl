@@ -337,13 +337,58 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
            rdfs:comment "This class means properties of objects. We do not use 'property' as a class name because 'property' means edges of RDF graphs." .
 
 
+###  http://example.org/virtualhome2kg/ontology/Back_Porch
+:Back_Porch rdf:type owl:Class ;
+            rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Backyard
+:Backyard rdf:type owl:Class ;
+          rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Bathroom
+:Bathroom rdf:type owl:Class ;
+          rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Bedroom
+:Bedroom rdf:type owl:Class ;
+         rdfs:subClassOf :Room .
+
+
 ###  http://example.org/virtualhome2kg/ontology/Character
 :Character rdf:type owl:Class ;
            rdfs:subClassOf :Object .
 
 
+###  http://example.org/virtualhome2kg/ontology/Entrance
+:Entrance rdf:type owl:Class ;
+          rdfs:subClassOf :Room .
+
+
 ###  http://example.org/virtualhome2kg/ontology/Event
 :Event rdf:type owl:Class .
+
+
+###  http://example.org/virtualhome2kg/ontology/Family_Altar
+:Family_Altar rdf:type owl:Class ;
+              rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Home
+:Home rdf:type owl:Class ;
+      rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Kitchen
+:Kitchen rdf:type owl:Class ;
+         rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Livingroom
+:Livingroom rdf:type owl:Class ;
+            rdfs:subClassOf :Room .
 
 
 ###  http://example.org/virtualhome2kg/ontology/Object
@@ -351,9 +396,24 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
         rdfs:comment "The class with the object instances from the household environment." .
 
 
+###  http://example.org/virtualhome2kg/ontology/Room
+:Room rdf:type owl:Class ;
+      rdfs:subClassOf :Object .
+
+
+###  http://example.org/virtualhome2kg/ontology/Service_Entrance
+:Service_Entrance rdf:type owl:Class ;
+                  rdfs:subClassOf :Room .
+
+
 ###  http://example.org/virtualhome2kg/ontology/Situation
 :Situation rdf:type owl:Class ;
            rdfs:comment "The class which describes the situation of the entire home at a certain moment." .
+
+
+###  http://example.org/virtualhome2kg/ontology/Stairs
+:Stairs rdf:type owl:Class ;
+        rdfs:subClassOf :Room .
 
 
 ###  http://example.org/virtualhome2kg/ontology/State
@@ -363,6 +423,11 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/virtualhome2kg/ontology/StateType
 :StateType rdf:type owl:Class .
+
+
+###  http://example.org/virtualhome2kg/ontology/Toilet
+:Toilet rdf:type owl:Class ;
+        rdfs:subClassOf :Room .
 
 
 ###  http://example.org/virtualhome2kg/ontology/VirtualHome
