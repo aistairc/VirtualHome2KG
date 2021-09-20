@@ -99,8 +99,20 @@ We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for
 
 ## Publications
 ### International Conference (Peer Reviewed)
-Egami, S., Nishimura, S., Fukuda, K.: VirtualHome2KG: Constructing and Augmenting Knowledge Graphs of Daily Activities Using Virtual Space. Proceedings of the ISWC 2021 Posters & Demonstrations and Industry Tracks co-located with 20th International Semantic Web Conference. pp.??-?? (2021) (to appear)
 
+Egami, S., Nishimura, S., Fukuda, K.: A Framework for Constructing and Augmenting Knowledge Graph Using Virtual Space: Toward Analysis of Daily Activities. Proceedings of the 33rd IEEE International Conference on Tools with Artificial Intelligence. pp.??-?? (2021) (to appear)  
+
+Egami, S., Nishimura, S., Fukuda, K.: VirtualHome2KG: Constructing and Augmenting Knowledge Graphs of Daily Activities Using Virtual Space. Proceedings of the ISWC 2021 Posters & Demonstrations and Industry Tracks co-located with 20th International Semantic Web Conference. pp.??-?? (2021) (to appear)
+```
+@inproceedings{egamiICTAI2021,
+   title     = "A Framework for Constructing and Augmenting Knowledge Graph Using Virtual Space: Toward Analysis of Daily Activities ",
+   author    = "Shusaku Egami and Satoshi Nishimura and Ken Fukuda",
+   booktitle   = "Proceedings of the 33rd IEEE International Conference on Tools with Artificial Intelligence (ICTAI)",
+   pages     = "??--??",
+   organization = "IEEE",
+   year      = "to appear"
+}
+``````
 ### Domestic Conference (Non-Peer Reviewed)
 Egami, S., Nishimura, S., Fukuda, K.: Constructing Knowledge Graphs of Daily Activities using 3D Virtual Spaces. The 53rd JSAI-SIG on Semantic Web and Ontology (SIG-SWO), SIG-SWO-053-04, pp.1-10 (2021) (in Japanese)  
 江上周作，西村悟史，福田賢一郎: 3次元仮想空間を用いた日常生活行動のナレッジグラフ構築，第53回人工知能学会セマンティックウェブとオントロジー研究会, SIG-SWO-053-04, pp.1-10 (2021)  
