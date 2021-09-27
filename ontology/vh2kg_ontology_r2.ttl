@@ -243,17 +243,18 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
               rdfs:range :State .
 
 
-###  http://example.org/virtualhome2kg/ontology/situationAfterAction
-:situationAfterAction rdf:type owl:ObjectProperty ;
+###  http://example.org/virtualhome2kg/ontology/situationAfterEvent
+:situationAfterEvent rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :relatedSituation ;
+                     rdfs:domain :Event ;
+                     rdfs:range :Situation .
+
+
+###  http://example.org/virtualhome2kg/ontology/situationBeforeEvent
+:situationBeforeEvent rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :relatedSituation ;
-                      owl:inverseOf :situationBeforeAction ;
+                      rdfs:domain :Event ;
                       rdfs:range :Situation .
-
-
-###  http://example.org/virtualhome2kg/ontology/situationBeforeAction
-:situationBeforeAction rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :relatedSituation ;
-                       rdfs:range :Situation .
 
 
 ###  http://example.org/virtualhome2kg/ontology/state
@@ -362,6 +363,11 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
            rdfs:subClassOf :Object .
 
 
+###  http://example.org/virtualhome2kg/ontology/EndEvent
+:EndEvent rdf:type owl:Class ;
+          rdfs:subClassOf :Event .
+
+
 ###  http://example.org/virtualhome2kg/ontology/Entrance
 :Entrance rdf:type owl:Class ;
           rdfs:subClassOf :Room .
@@ -414,6 +420,11 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 ###  http://example.org/virtualhome2kg/ontology/Stairs
 :Stairs rdf:type owl:Class ;
         rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/StartEvent
+:StartEvent rdf:type owl:Class ;
+            rdfs:subClassOf :Event .
 
 
 ###  http://example.org/virtualhome2kg/ontology/State

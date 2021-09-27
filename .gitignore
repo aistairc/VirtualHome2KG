@@ -179,6 +179,7 @@ demo/graph_state_list_with_bbox/*
 demo/rdf/*
 demo/_rdf/*
 demo/rdf_with_bbox/*
+demo/_rdf_with_bbox/*
 simulation/Output/*
 simulation/simulation
 demo/auth.txt
