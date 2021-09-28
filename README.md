@@ -97,6 +97,10 @@ Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.
 ## Ontology
 We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
 
+## Versions
+- [latest version](https://github.com/aistairc/VirtualHome2KG/):  new schema (Event-centric)  
+- [stable version](https://github.com/aistairc/VirtualHome2KG/tree/bcfa5b7b06af046c70d7d41c454ad7f9610ecbd2): old schema (Activity-centric. presented at ISWC2021 Poster, ICTAI2021)
+
 ## Publications
 ### International Conference (Peer Reviewed)
 
