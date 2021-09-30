@@ -363,6 +363,11 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
            rdfs:subClassOf :Object .
 
 
+###  http://example.org/virtualhome2kg/ontology/Dining_room
+:Dining_room rdf:type owl:Class ;
+             rdfs:subClassOf :Room .
+
+
 ###  http://example.org/virtualhome2kg/ontology/EndEvent
 :EndEvent rdf:type owl:Class ;
           rdfs:subClassOf :Event .
@@ -385,6 +390,11 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 ###  http://example.org/virtualhome2kg/ontology/Home
 :Home rdf:type owl:Class ;
       rdfs:subClassOf :Room .
+
+
+###  http://example.org/virtualhome2kg/ontology/Home_office
+:Home_office rdf:type owl:Class ;
+             rdfs:subClassOf :Room .
 
 
 ###  http://example.org/virtualhome2kg/ontology/Kitchen
