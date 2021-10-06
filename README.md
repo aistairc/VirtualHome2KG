@@ -116,21 +116,6 @@ Egami, S., Nishimura, S., Fukuda, K.: VirtualHome2KG: Constructing and Augmentin
    organization = "IEEE",
    year      = "to appear"
 }
-``````
-### Domestic Conference (Non-Peer Reviewed)
-Egami, S., Nishimura, S., Fukuda, K.: Constructing Knowledge Graphs of Daily Activities using 3D Virtual Spaces. The 53rd JSAI-SIG on Semantic Web and Ontology (SIG-SWO), SIG-SWO-053-04, pp.1-10 (2021) (in Japanese)  
-江上周作，西村悟史，福田賢一郎: 3次元仮想空間を用いた日常生活行動のナレッジグラフ構築，第53回人工知能学会セマンティックウェブとオントロジー研究会, SIG-SWO-053-04, pp.1-10 (2021)  
-```
-@article{weko_11107_1,
-   author    = "江上,周作 and 西村,悟史 and 福田,賢一郎",
-   title     = "3次元仮想空間を用いた日常生活行動のナレッジグラフ構築",
-   journal   = "人工知能学会研究会資料",
-   year      = "2021",
-   volume    = "53",
-   number    = "4",
-   pages     = "04-01--04-10",
-   month     = "mar"
-}
 ```
 
 
