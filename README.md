@@ -107,16 +107,6 @@ We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for
 Egami, S., Nishimura, S., Fukuda, K.: A Framework for Constructing and Augmenting Knowledge Graph Using Virtual Space: Toward Analysis of Daily Activities. Proceedings of the 33rd IEEE International Conference on Tools with Artificial Intelligence. pp.??-?? (2021) (to appear)  
 
 Egami, S., Nishimura, S., Fukuda, K.: VirtualHome2KG: Constructing and Augmenting Knowledge Graphs of Daily Activities Using Virtual Space. Proceedings of the ISWC 2021 Posters & Demonstrations and Industry Tracks co-located with 20th International Semantic Web Conference. pp.??-?? (2021) (to appear)
-```
-@inproceedings{egamiICTAI2021,
-   title     = "A Framework for Constructing and Augmenting Knowledge Graphs using Virtual Space: Towards Analysis of Daily Activities ",
-   author    = "Shusaku Egami and Satoshi Nishimura and Ken Fukuda",
-   booktitle   = "Proceedings of the 33rd IEEE International Conference on Tools with Artificial Intelligence (ICTAI)",
-   pages     = "??--??",
-   organization = "IEEE",
-   year      = "to appear"
-}
-```
 
 
 <!--## Knowledge graphs
