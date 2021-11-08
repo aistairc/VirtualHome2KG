@@ -274,7 +274,7 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#object
 ho:object rdf:type owl:ObjectProperty ;
-          rdfs:domain :Action ;
+          rdfs:domain :Event ;
           rdfs:range :Object .
 
 
