@@ -183,6 +183,7 @@ demo/_rdf_with_bbox/*
 simulation/Output/*
 simulation/simulation
 demo/auth.txt
+demo/auth_markov_chain.txt
 demo/behavioral_data_augmentation_amt.ipynb
 demo/behavioral_data_augmentation-Copy2.ipynb
 demo/csv2rdf.ipynb
