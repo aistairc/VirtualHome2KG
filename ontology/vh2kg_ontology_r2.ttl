@@ -176,6 +176,16 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
            rdfs:range :State .
 
 
+###  http://example.org/virtualhome2kg/ontology/object1
+:object1 rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf ho:object .
+
+
+###  http://example.org/virtualhome2kg/ontology/object2
+:object2 rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf ho:object .
+
+
 ###  http://example.org/virtualhome2kg/ontology/on
 :on rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :relatedShape ;
