@@ -146,6 +146,15 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
            rdfs:range :Object .
 
 
+###  http://example.org/virtualhome2kg/ontology/mainObject
+:mainObject rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf ho:object ;
+            rdfs:domain :Event ;
+            rdfs:range :Object ;
+            rdfs:comment """A main object of an event.
+If an agent pours milk into a glass, the value of the mainObject is the milk.""" .
+
+
 ###  http://example.org/virtualhome2kg/ontology/nextActivity
 :nextActivity rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :relatedActivity ;
@@ -174,16 +183,6 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
            owl:inverseOf :previousState ;
            rdfs:domain :State ;
            rdfs:range :State .
-
-
-###  http://example.org/virtualhome2kg/ontology/object1
-:object1 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf ho:object .
-
-
-###  http://example.org/virtualhome2kg/ontology/object2
-:object2 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf ho:object .
 
 
 ###  http://example.org/virtualhome2kg/ontology/on
@@ -271,6 +270,15 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
 :state rdf:type owl:ObjectProperty ;
        rdfs:domain :State ;
        rdfs:range :StateType .
+
+
+###  http://example.org/virtualhome2kg/ontology/targetObject
+:targetObject rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf ho:object ;
+              rdfs:domain :Event ;
+              rdfs:range :Object ;
+              rdfs:comment """A target object of an event.
+If an agent pours milk into a glass, the value of the value of the targetObject is the glass.""" .
 
 
 ###  http://example.org/virtualhome2kg/ontology/to
