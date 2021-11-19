@@ -21,6 +21,10 @@ This ontology is an extended version of the HomeOntology (https://github.com/val
 <http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+<http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Datatypes
 #################################################################
@@ -234,7 +238,8 @@ If an agent pours milk into a glass, the value of the mainObject is the milk."""
 
 
 ###  http://example.org/virtualhome2kg/ontology/relatedEvent
-:relatedEvent rdf:type owl:ObjectProperty .
+:relatedEvent rdf:type owl:ObjectProperty ;
+              rdfs:range :Event .
 
 
 ###  http://example.org/virtualhome2kg/ontology/relatedShape
@@ -281,6 +286,15 @@ If an agent pours milk into a glass, the value of the mainObject is the milk."""
 If an agent pours milk into a glass, the value of the value of the targetObject is the glass.""" .
 
 
+###  http://example.org/virtualhome2kg/ontology/time
+:time rdf:type owl:ObjectProperty ;
+      rdfs:range [ rdf:type owl:Class ;
+                   owl:unionOf ( <http://www.w3.org/2006/time#TemporalDuration>
+                                 <http://www.w3.org/2006/time#TemporalEntity>
+                               )
+                 ] .
+
+
 ###  http://example.org/virtualhome2kg/ontology/to
 :to rdf:type owl:ObjectProperty .
 
@@ -320,6 +334,12 @@ ho:object rdf:type owl:ObjectProperty ;
 :activityNumber rdf:type owl:DatatypeProperty ;
                 rdfs:domain ho:Activity ;
                 rdfs:range xsd:int .
+
+
+###  http://example.org/virtualhome2kg/ontology/eventNumber
+:eventNumber rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Event ;
+             rdfs:range xsd:int .
 
 
 ###  http://www.w3.org/2006/time#numericDuration
@@ -397,7 +417,9 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 
 
 ###  http://example.org/virtualhome2kg/ontology/Event
-:Event rdf:type owl:Class .
+:Event rdf:type owl:Class ;
+       <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/NET/c4dm/event.owl#Event> ,
+                                                        <http://semanticweb.cs.vu.nl/2009/11/sem/Event> .
 
 
 ###  http://example.org/virtualhome2kg/ontology/Family_Altar
@@ -4335,7 +4357,16 @@ ho:yoga rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/2006/time#Duration
-<http://www.w3.org/2006/time#Duration> rdf:type owl:Class .
+<http://www.w3.org/2006/time#Duration> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.w3.org/2006/time#TemporalDuration> .
+
+
+###  http://www.w3.org/2006/time#TemporalDuration
+<http://www.w3.org/2006/time#TemporalDuration> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2006/time#TemporalUnit
@@ -4597,16 +4628,6 @@ x3do:X3DField rdf:type owl:Class ;
 
 ###  http://example.org/virtualhome2kg/ontology/Watch
 :Watch rdf:type owl:NamedIndividual .
-
-
-###  http://example.org/virtualhome2kg/ontology/activity0
-:activity0 rdf:type owl:NamedIndividual ;
-           :hasEvent :event0 .
-
-
-###  http://example.org/virtualhome2kg/ontology/event0
-:event0 rdf:type owl:NamedIndividual ;
-        :action ac:wakeUp .
 
 
 ###  http://example.org/virtualhome2kg/ontology/action/break
