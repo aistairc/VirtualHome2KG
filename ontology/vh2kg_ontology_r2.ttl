@@ -65,7 +65,8 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
 
 ###  http://example.org/virtualhome2kg/ontology/agent
 :agent rdf:type owl:ObjectProperty ;
-       rdfs:range :Character .
+       rdfs:range :Character ;
+       <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/NET/c4dm/event.owl#agent> .
 
 
 ###  http://example.org/virtualhome2kg/ontology/attribute
@@ -292,7 +293,8 @@ If an agent pours milk into a glass, the value of the value of the targetObject 
                    owl:unionOf ( <http://www.w3.org/2006/time#TemporalDuration>
                                  <http://www.w3.org/2006/time#TemporalEntity>
                                )
-                 ] .
+                 ] ;
+      <http://www.w3.org/2004/02/skos/core#closeMatch> <http://purl.org/NET/c4dm/event.owl#time> .
 
 
 ###  http://example.org/virtualhome2kg/ontology/to
