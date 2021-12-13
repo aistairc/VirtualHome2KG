@@ -15,7 +15,7 @@ Please see the original repository of the [virtualhome](https://github.com/xavie
 ![overview](image/overview.png "Overview of VirtualHome2KG")
 
 ## Versions
-- [Beta version](https://github.com/aistairc/VirtualHome2KG/):  new schema (Event-centric)  
+- [Beta version](https://github.com/aistairc/VirtualHome2KG/):  new schema (Event-centric. under submission)  
 - [stable version](https://github.com/aistairc/VirtualHome2KG/tree/bcfa5b7b06af046c70d7d41c454ad7f9610ecbd2): old schema (Activity-centric. presented at ISWC2021 Poster, ICTAI2021 Short paper)
 
 ## Set Up

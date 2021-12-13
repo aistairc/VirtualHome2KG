@@ -190,3 +190,6 @@ demo/behavioral_data_augmentation-Copy2.ipynb
 demo/csv2rdf.ipynb
 demo/example.ttl
 demo/episodes/*
+demo/weighted_markov_chain*
+demo/evaluate*
+ontology/vh2kg_ontology_r2.tex
