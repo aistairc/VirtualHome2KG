@@ -58,10 +58,6 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
           rdfs:range ho:Activity .
 
 
-###  http://example.org/virtualhome2kg/ontology/afford
-:afford rdf:type owl:ObjectProperty .
-
-
 ###  http://example.org/virtualhome2kg/ontology/affordAction
 :affordAction rdf:type owl:ObjectProperty ;
               rdfs:range :Action .
@@ -69,6 +65,10 @@ x3do:SFVec3f rdf:type rdfs:Datatype .
 
 ###  http://example.org/virtualhome2kg/ontology/affordance
 :affordance rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/virtualhome2kg/ontology/affords
+:affords rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/virtualhome2kg/ontology/agent
@@ -7951,6 +7951,11 @@ ac:grab rdf:type owl:NamedIndividual ,
 ac:greet rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/virtualhome2kg/ontology/action/hang
+ac:hang rdf:type owl:NamedIndividual ,
+                 :Action .
+
+
 ###  http://example.org/virtualhome2kg/ontology/action/hit
 ac:hit rdf:type owl:NamedIndividual ,
                 :Action .
@@ -8761,27 +8766,27 @@ x3do:SFVec3f <http://purl.org/dc/terms/description> "SFVec3d is a 3-tuple triple
                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#bw>
                                                                                                                                                                               ] ;
                                                                                                                                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#propertyPredicate> :afford ;
-                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#o> ;
-                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument2> ac:strideOver
+                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#subtract> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#arguments> ( <urn:swrl:var#y3>
+                                                                                                                                                                                                                                        <urn:swrl:var#y1>
+                                                                                                                                                                                                                                        <urn:swrl:var#y2>
+                                                                                                                                                                                                                                      )
                                                                                                                                                                                          ] ;
                                                                                                                                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                                                                                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#subtract> ;
-                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#arguments> ( <urn:swrl:var#y3>
-                                                                                                                                                                                                                                                   <urn:swrl:var#y1>
-                                                                                                                                                                                                                                                   <urn:swrl:var#y2>
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#add> ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#arguments> ( <urn:swrl:var#dist>
+                                                                                                                                                                                                                                                   <urn:swrl:var#x_d>
+                                                                                                                                                                                                                                                   <urn:swrl:var#y_d>
+                                                                                                                                                                                                                                                   <urn:swrl:var#z_d>
                                                                                                                                                                                                                                                  )
                                                                                                                                                                                                     ] ;
                                                                                                                                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#add> ;
-                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#arguments> ( <urn:swrl:var#dist>
-                                                                                                                                                                                                                                                              <urn:swrl:var#x_d>
-                                                                                                                                                                                                                                                              <urn:swrl:var#y_d>
-                                                                                                                                                                                                                                                              <urn:swrl:var#z_d>
-                                                                                                                                                                                                                                                            )
+                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> :affords ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#o> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument2> ac:strideOver
                                                                                                                                                                                                                ] ;
                                                                                                                                                                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                                                                                                                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
