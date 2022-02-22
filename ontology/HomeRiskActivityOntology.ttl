@@ -7686,6 +7686,11 @@ x3do:X3DField rdf:type owl:Class ;
 :cold rdf:type owl:NamedIndividual .
 
 
+###  http://example.org/virtualhome2kg/ontology/cream
+:cream rdf:type owl:NamedIndividual ,
+                ob:Attribute .
+
+
 ###  http://example.org/virtualhome2kg/ontology/dark
 :dark rdf:type owl:NamedIndividual .
 
@@ -7716,6 +7721,26 @@ x3do:X3DField rdf:type owl:Class ;
                  :Event ;
         :action ac:climb ;
         :mainObject :box1 .
+
+
+###  http://example.org/virtualhome2kg/ontology/has_paper
+:has_paper rdf:type owl:NamedIndividual ,
+                    ob:Attribute .
+
+
+###  http://example.org/virtualhome2kg/ontology/has_plug
+:has_plug rdf:type owl:NamedIndividual ,
+                   ob:Attribute .
+
+
+###  http://example.org/virtualhome2kg/ontology/has_surface
+:has_surface rdf:type owl:NamedIndividual ,
+                      ob:Attribute .
+
+
+###  http://example.org/virtualhome2kg/ontology/has_switch
+:has_switch rdf:type owl:NamedIndividual ,
+                     ob:Attribute .
 
 
 ###  http://example.org/virtualhome2kg/ontology/heavy
