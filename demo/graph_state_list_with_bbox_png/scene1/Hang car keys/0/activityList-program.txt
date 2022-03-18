@@ -1,0 +1,7 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <table> (372)
+<char0> [FIND] <keys> (1000)
+<char0> [GRAB] <keys> (1000)
+<char0> [WALK] <wall> (346)
+<char0> [FIND] <hanger> (376)
+<char0> [PUTBACK] <keys> (1000) <hanger> (376)

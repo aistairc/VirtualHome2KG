@@ -1,0 +1,3 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <computer> (434)
+<char0> [SWITCHON] <computer> (434)

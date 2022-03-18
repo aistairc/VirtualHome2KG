@@ -1,0 +1,6 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <desk> (374)
+<char0> [FIND] <chair> (373)
+<char0> [SIT] <chair> (373)
+<char0> [FIND] <computer> (434)
+<char0> [SWITCHON] <computer> (434)

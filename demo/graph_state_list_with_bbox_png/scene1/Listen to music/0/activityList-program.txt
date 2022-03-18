@@ -1,0 +1,4 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <stereo> (1000)
+<char0> [FIND] <stereo> (1000)
+<char0> [SWITCHON] <stereo> (1000)

@@ -1,0 +1,7 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <table> (372)
+<char0> [FIND] <table> (372)
+<char0> [PULL] <table> (372)
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <table> (372)
+<char0> [PUSH] <table> (372)

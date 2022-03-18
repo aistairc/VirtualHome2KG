@@ -1,0 +1,79 @@
+VirtualHome2KG,WordNet,word_and_type
+close,close,close.v.01
+plugOut,unplug,unplug.v.01
+pour,pour,pour.v.01
+breatheOut,breathe out,exhale.v.01
+stretch,stretch,stretch.v.02
+break,break,break.v.05
+maintain,maintain,keep.v.01
+move,move,move.v.02
+speak,speak,speak.v.03
+push,push,push.v.01
+stir,stir,stir.v.01
+putIn,put in,insert.v.02
+eat,eat,eat.v.01
+pull,pull,pull.v.01
+stand,stand,stand.v.01
+wipe,wipe,wipe.v.01
+dive,dive,dive.v.03
+sew,sew,sew.v.01
+lift,lift,lift.v.02
+rinse,rinse,rinse.v.01
+smell,smell,smell.v.01
+watch,watch,watch.v.01
+shake,shake,shake.v.01
+sing,sing,sing.v.01
+wrap,wrap,wrap.v.01
+cut,cut,cut.v.01
+put,put,put.v.01
+excrete,excrete,excrete.v.01
+plugIn,plug in,plug_in.v.01
+jump,jump,jump.v.01
+throw,throw,throw.v.01
+grab,grab,grab.v.03
+walk,walk,walk.v.01
+pullOut,pull out,draw.v.05
+sweep,sweep,sweep.v.03
+brush,brush,brush.v.01
+kneel,kneel,kneel.v.01
+cover,cover,cover.v.01
+taste,taste,taste.v.01
+bend,bend,bend.v.01
+breatheIn,breathe in,inhale.v.02
+type,type,type.v.01
+carry,carry,transport.v.02
+pickUp,pick up,pick_up.v.01
+write,write,write.v.01
+run,run,run.v.01
+lie,lie,lie.v.02
+fold,fold,fold.v.01
+soak,soak,soak.v.01
+open,open,open.v.01
+unwrap,unwrap,unwrap.v.01
+gargle,gargle,gargle.v.01
+crawl,crawl,crawl.v.01
+squeeze,squeeze,squash.v.01
+twist,twist,writhe.v.01
+drop,drop,drop.v.01
+turnTo,turn to,turn_to.v.02
+unfold,unfold,unfold.v.03
+hit,hit,hit.v.01
+squat,squat,squat.v.01
+spit,spit,spit.v.01
+climbDown,climb down,alight.v.02
+tie,tie,tie.v.01
+uncover,disclose,disclose.v.02
+takeOff,take off,take_off.v.06
+swing,swing,swing.v.01
+sit,sit,sit.v.01
+scrub,scrub,scrub.v.01
+putOn,put on,wear.v.09
+drink,drink,drink.v.01
+pointAt,point,indicate.v.02
+listen,listen,listen.v.01
+touch,touch,touch.v.01
+standUp,stand up,arise.v.03
+vacuum,vacuum,vacuum.v.01
+reach,reach,reach.v.03
+climb,climb,climb.v.01
+straddle,stride,stride.v.01

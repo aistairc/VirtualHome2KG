@@ -1,0 +1,85 @@
+@prefix hra: <http://example.org/virtualhome2kg/ontology/homeriskactivitiy/> .
+@prefix x3do: <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://example.org/virtualhome2kg/ontology/> .
+@prefix ho: <http://www.owl-ontologies.com/VirtualHome.owl#> .
+@prefix ob: <http://raw.githubusercontent.com/aistairc/HomeObjectOntology/main/HomeObject.owl#> .
+@prefix ac: <http://example.org/virtualhome2kg/ontology/action/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://example.org/virtualhome2kg/instance/decorate_it0_scene1> hra:riskFactor <http://example.org/virtualhome2kg/instance/event10_decorate_it0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event14_decorate_it0_scene1>, <http://example.org/virtualhome2kg/instance/event6_decorate_it0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event7_decorate_it0_scene1>, <http://example.org/virtualhome2kg/instance/event8_decorate_it0_scene1> .
+
+<http://example.org/virtualhome2kg/instance/event10_decorate_it0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event14_decorate_it0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event6_decorate_it0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event7_decorate_it0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event8_decorate_it0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/put_clothes_away0_scene1> hra:riskFactor
+    <http://example.org/virtualhome2kg/instance/event11_put_clothes_away0_scene1>, <http://example.org/virtualhome2kg/instance/event12_put_clothes_away0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event13_put_clothes_away0_scene1>, <http://example.org/virtualhome2kg/instance/event17_put_clothes_away0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event18_put_clothes_away0_scene1>, <http://example.org/virtualhome2kg/instance/event19_put_clothes_away0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event23_put_clothes_away0_scene1>, <http://example.org/virtualhome2kg/instance/event24_put_clothes_away0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event25_put_clothes_away0_scene1>, <http://example.org/virtualhome2kg/instance/event5_put_clothes_away0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event6_put_clothes_away0_scene1>, <http://example.org/virtualhome2kg/instance/event7_put_clothes_away0_scene1> .
+
+<http://example.org/virtualhome2kg/instance/event11_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event12_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event13_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event17_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event18_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event19_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event23_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event24_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event25_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event5_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event6_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event7_put_clothes_away0_scene1> a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/rearrange_photo_frames0_scene1> hra:riskFactor
+    <http://example.org/virtualhome2kg/instance/event13_rearrange_photo_frames0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event7_rearrange_photo_frames0_scene1> .
+
+<http://example.org/virtualhome2kg/instance/event13_rearrange_photo_frames0_scene1>
+  a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event7_rearrange_photo_frames0_scene1>
+  a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/rotate_stock_in_refrigerator0_scene1>
+  hra:riskFactor <http://example.org/virtualhome2kg/instance/event1_rotate_stock_in_refrigerator0_scene1>,
+    <http://example.org/virtualhome2kg/instance/event32_rotate_stock_in_refrigerator0_scene1> .
+
+<http://example.org/virtualhome2kg/instance/event1_rotate_stock_in_refrigerator0_scene1>
+  a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/event32_rotate_stock_in_refrigerator0_scene1>
+  a hra:DoSomethingToHighPositionObject .
+
+<http://example.org/virtualhome2kg/instance/take_off_a_painting0_scene1> hra:riskFactor
+    <http://example.org/virtualhome2kg/instance/event2_take_off_a_painting0_scene1> .
+
+<http://example.org/virtualhome2kg/instance/event2_take_off_a_painting0_scene1> a
+    hra:DoSomethingToHighPositionObject .

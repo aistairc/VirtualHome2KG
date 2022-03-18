@@ -1,0 +1,31 @@
+Prefices
+{
+    rdf  :  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    rdfs :  <http://www.w3.org/2000/01/rdf-schema#>
+    owl  :  <http://www.w3.org/2002/07/owl#>
+    xsd  :  <http://www.w3.org/2001/XMLSchema#>
+    ho   :  <http://www.owl-ontologies.com/VirtualHome.owl#>
+    vh2kg:  <http://example.org/virtualhome2kg/ontology/>
+    an   :  <http://example.org/virtualhome2kg/ontology/action/>
+    ob   :  <http://raw.githubusercontent.com/aistairc/HomeObjectOntology/main/HomeObject.owl#>
+    hra  :  <http://example.org/virtualhome2kg/ontology/homeriskactivitiy/>
+}
+Axioms {}
+Rules
+{
+Id: carry_heavy_object
+	ac <rdf:type> <ho:Activity>
+	e  <rdf:type> <vh2kg:Event>
+	a  <rdf:type> <vh2kg:Action>
+	o  <rdf:type> <ob:Object>
+	ac <vh2kg:hasEvent> e
+	e  <vh2kg:action> <an:grab>
+	e  <vh2kg:mainObject> o
+	o  <vh2kg:weight> w
+	w  <vh2kg:unit> vh2kg:kg
+	w  <rdf:value> x             [Constraint x > "2"^^xsd:decimal]
+	----------------------------------
+	ac <rdf:type> <hra:RiskActivity>
+	ac <hra:riskFactor> e
+	e  <rdf:type> <hra:CarryHeavyObject>
+}

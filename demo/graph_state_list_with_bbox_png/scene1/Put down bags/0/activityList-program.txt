@@ -1,0 +1,6 @@
+<char0> [WALK] <dining_room> (208)
+<char0> [WALK] <food_food> (1000)
+<char0> [FIND] <food_food> (1000)
+<char0> [GRAB] <food_food> (1000)
+<char0> [FIND] <table> (232)
+<char0> [PUTBACK] <food_food> (1000) <table> (232)

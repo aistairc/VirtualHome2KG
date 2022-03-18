@@ -1,0 +1,5 @@
+<char0> [WALK] <bathroom> (11)
+<char0> [WALK] <mirror> (1000)
+<char0> [FIND] <mirror> (1000)
+<char0> [TURNTO] <mirror> (1000)
+<char0> [LOOKAT] <mirror> (1000)

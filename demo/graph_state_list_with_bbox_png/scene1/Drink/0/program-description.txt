@@ -1,0 +1,2 @@
+Drink
+Turn on the faucet.  Place glass under tap and fill with water.  Turn off faucet.  Drink water.

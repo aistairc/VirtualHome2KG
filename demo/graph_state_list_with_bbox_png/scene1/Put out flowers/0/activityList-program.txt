@@ -1,0 +1,6 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <centerpiece> (1000)
+<char0> [FIND] <centerpiece> (1000)
+<char0> [GRAB] <centerpiece> (1000)
+<char0> [WALK] <table> (372)
+<char0> [PUTBACK] <centerpiece> (1000) <table> (372)

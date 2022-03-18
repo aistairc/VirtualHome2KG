@@ -1,0 +1,29 @@
+@prefix : <http://example.org/virtualhome2kg/ontology/> .
+@prefix ob: <http://raw.githubusercontent.com/aistairc/HomeObjectOntology/main/HomeObject.owl#> .
+@prefix ac: <http://example.org/virtualhome2kg/ontology/action/> .
+@prefix hra: <http://example.org/virtualhome2kg/ontology/homeriskactivitiy/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://example.org/virtualhome2kg/instance/home_situation0_walk_to_livingroom0_scene2>
+  hra:riskFactor <http://example.org/virtualhome2kg/instance/state0_mat111_walk_to_livingroom0_scene2> .
+
+<http://example.org/virtualhome2kg/instance/state0_mat111_walk_to_livingroom0_scene2>
+  a hra:ObjectPlacedOnAisle .
+
+<http://example.org/virtualhome2kg/instance/home_situation1_walk_to_livingroom0_scene2>
+  hra:riskFactor <http://example.org/virtualhome2kg/instance/state1_mat111_walk_to_livingroom0_scene2> .
+
+<http://example.org/virtualhome2kg/instance/state1_mat111_walk_to_livingroom0_scene2>
+  a hra:ObjectPlacedOnAisle .
+
+<http://example.org/virtualhome2kg/instance/home_situation2_walk_to_livingroom0_scene2>
+  hra:riskFactor <http://example.org/virtualhome2kg/instance/state2_mat111_walk_to_livingroom0_scene2> .
+
+<http://example.org/virtualhome2kg/instance/state2_mat111_walk_to_livingroom0_scene2>
+  a hra:ObjectPlacedOnAisle .

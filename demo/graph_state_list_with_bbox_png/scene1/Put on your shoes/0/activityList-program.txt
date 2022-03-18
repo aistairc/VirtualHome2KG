@@ -1,0 +1,8 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <shoes> (1000)
+<char0> [FIND] <shoes> (1000)
+<char0> [GRAB] <shoes> (1000)
+<char0> [FIND] <chair> (373)
+<char0> [SIT] <chair> (373)
+<char0> [FIND] <feet_both> (1001)
+<char0> [PUTBACK] <shoes> (1000) <feet_both> (1001)

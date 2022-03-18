@@ -1,0 +1,6 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <rag> (1000)
+<char0> [FIND] <rag> (1000)
+<char0> [GRAB] <rag> (1000)
+<char0> [WALK] <wall> (346)
+<char0> [PUTOBJBACK] <rag> (1000)

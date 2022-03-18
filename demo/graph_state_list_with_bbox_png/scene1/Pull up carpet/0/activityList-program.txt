@@ -1,0 +1,5 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <mat> (418)
+<char0> [FIND] <mat> (418)
+<char0> [TOUCH] <mat> (418)
+<char0> [PULL] <mat> (418)

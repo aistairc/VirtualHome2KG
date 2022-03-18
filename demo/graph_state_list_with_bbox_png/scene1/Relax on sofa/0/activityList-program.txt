@@ -1,0 +1,4 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <couch> (369)
+<char0> [FIND] <couch> (369)
+<char0> [SIT] <couch> (369)

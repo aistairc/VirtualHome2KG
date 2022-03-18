@@ -1,0 +1,5 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <dog> (1000)
+<char0> [TURNTO] <dog> (1000)
+<char0> [LOOKAT] <dog> (1000)
+<char0> [TOUCH] <dog> (1000)

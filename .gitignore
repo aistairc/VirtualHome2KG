@@ -182,6 +182,7 @@ demo/__rdf/*
 demo/rdf_with_bbox/*
 demo/_rdf_with_bbox/*
 demo/__rdf_with_bbox/*
+demo/rdf_with_bbox_png/*
 simulation/Output/*
 simulation/simulation
 demo/auth*

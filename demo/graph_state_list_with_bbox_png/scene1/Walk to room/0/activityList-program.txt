@@ -1,0 +1,2 @@
+<char0> [WALK] <home_office> (336)
+<char0> [WALK] <home_office> (336)
