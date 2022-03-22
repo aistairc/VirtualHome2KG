@@ -176,6 +176,7 @@ simulation/exec_mac*
 demo/graph_state_list/*
 demo/_graph_state_list/*
 demo/graph_state_list_with_bbox/*
+demo/graph_state_list_with_bbox_png/*
 demo/rdf/*
 demo/_rdf/*
 demo/__rdf/*
