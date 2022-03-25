@@ -160,7 +160,8 @@ def get_preconds_script(script_lines):
                 if ever_sitting or ever_lying:
                     raise ScriptFail('Error, character already up')
                 else:
-                    precond_dict.addPrecond('sitting', ('Character', 1), [])
+                    if i == 0:
+                        precond_dict.addPrecond('sitting', ('Character', 1), [])
 
 
     # Make sure you walk to find an object before interacting
