@@ -195,3 +195,5 @@ demo/episodes/*
 demo/weighted_markov_chain*
 demo/evaluate*
 ontology/vh2kg_ontology_r2.tex
+*.mp4
+*.app
