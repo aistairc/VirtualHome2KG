@@ -341,7 +341,9 @@ If an agent pours milk into a glass, the value of the value of the targetObject 
 
 
 ###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/riskFactor
-hra:riskFactor rdf:type owl:ObjectProperty .
+hra:riskFactor rdf:type owl:ObjectProperty ;
+               rdfs:domain hra:RiskActivity ;
+               rdfs:range <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#object
@@ -483,15 +485,12 @@ hra:PickUpObjectWhileSitting rdf:type owl:Class ;
 
 ###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/RiskActivity
 hra:RiskActivity rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( ho:Activity
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty hra:riskFactor ;
-                                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onClass <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent>
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] .
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty hra:riskFactor ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent>
+                                     ] ;
+                 rdfs:subClassOf ho:Activity .
 
 
 ###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/RiskSituation
