@@ -461,11 +461,6 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 :VirtualHome rdf:type owl:Class .
 
 
-###  http://example.org/virtualhome2kg/ontology/clean_desk
-:clean_desk rdf:type owl:Class ;
-            rdfs:subClassOf ho:HouseCleaning .
-
-
 ###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/CarryHeavyObject
 hra:CarryHeavyObject rdf:type owl:Class ;
                      rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
@@ -3492,27 +3487,24 @@ ho:Activity rdf:type owl:Class .
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#BedTimeSleep
 ho:BedTimeSleep rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( ho:Activity
-                                                           [ rdf:type owl:Class ;
-                                                             owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty :hasEvent ;
-                                                                             owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty :action ;
-                                                                                                  owl:hasValue ac:sleep
-                                                                                                ]
-                                                                           ]
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty :hasEvent ;
-                                                                             owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty :action ;
-                                                                                                  owl:hasValue ac:wakeUp
-                                                                                                ]
-                                                                           ]
-                                                                         )
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasEvent ;
+                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :action ;
+                                                                           owl:hasValue ac:sleep
+                                                                         ]
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasEvent ;
+                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :action ;
+                                                                           owl:hasValue ac:wakeUp
+                                                                         ]
+                                                    ]
+                                                  )
                                     ] ;
+                rdfs:subClassOf ho:Activity ;
                 rdfs:comment """Class with sequences for getting ready for the bed, or get ready for 
 sleep, or even put the kids to sleep
 .""" .
@@ -3540,27 +3532,24 @@ circumstances.""" .
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#EatingDrinking
 ho:EatingDrinking rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( ho:Activity
-                                                             [ rdf:type owl:Class ;
-                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :hasEvent ;
-                                                                               owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty :action ;
-                                                                                                    owl:hasValue ac:drink
-                                                                                                  ]
-                                                                             ]
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :hasEvent ;
-                                                                               owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty :action ;
-                                                                                                    owl:hasValue ac:eat
-                                                                                                  ]
-                                                                             ]
-                                                                           )
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasEvent ;
+                                                        owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :action ;
+                                                                             owl:hasValue ac:drink
+                                                                           ]
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasEvent ;
+                                                        owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :action ;
+                                                                             owl:hasValue ac:eat
+                                                                           ]
+                                                      ]
+                                                    )
                                       ] ;
+                  rdfs:subClassOf ho:Activity ;
                   rdfs:comment "Class that contains sequences for eating and drinking." .
 
 
@@ -4060,6 +4049,11 @@ ho:clean_bathroom rdf:type owl:Class ;
                   rdfs:subClassOf ho:HouseCleaning ;
                   rdfs:comment """The class with sequence of actions for cleaning the bathroom, the whole 
 room.""" .
+
+
+###  http://www.owl-ontologies.com/VirtualHome.owl#clean_desk
+ho:clean_desk rdf:type owl:Class ;
+              rdfs:subClassOf ho:HouseCleaning .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#clean_dishes
