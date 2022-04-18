@@ -461,6 +461,11 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 :VirtualHome rdf:type owl:Class .
 
 
+###  http://example.org/virtualhome2kg/ontology/clean_desk
+:clean_desk rdf:type owl:Class ;
+            rdfs:subClassOf ho:HouseCleaning .
+
+
 ###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/CarryHeavyObject
 hra:CarryHeavyObject rdf:type owl:Class ;
                      rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
@@ -3698,6 +3703,11 @@ ho:admire_art rdf:type owl:Class ;
 your home.""" .
 
 
+###  http://www.owl-ontologies.com/VirtualHome.owl#admire_paintings
+ho:admire_paintings rdf:type owl:Class ;
+                    rdfs:subClassOf ho:Leisure .
+
+
 ###  http://www.owl-ontologies.com/VirtualHome.owl#annoy_your_dog
 ho:annoy_your_dog rdf:type owl:Class ;
                   rdfs:subClassOf ho:Other ;
@@ -3906,6 +3916,11 @@ ho:card rdf:type owl:Class ;
 ho:care_for_houseplants rdf:type owl:Class ;
                         rdfs:subClassOf ho:HouseArrangement ;
                         rdfs:comment "The class with sequence of actions for for carring for house plants." .
+
+
+###  http://www.owl-ontologies.com/VirtualHome.owl#carry_box
+ho:carry_box rdf:type owl:Class ;
+             rdfs:subClassOf ho:HouseArrangement .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#carry_groceries_to_kitchen
@@ -4422,6 +4437,11 @@ ho:dress_up_and_pretend rdf:type owl:Class ;
     </p>""" .
 
 
+###  http://www.owl-ontologies.com/VirtualHome.owl#drink
+ho:drink rdf:type owl:Class ;
+         rdfs:subClassOf ho:EatingDrinking .
+
+
 ###  http://www.owl-ontologies.com/VirtualHome.owl#dry_hair
 ho:dry_hair rdf:type owl:Class ;
             rdfs:subClassOf ho:HygieneStyling ;
@@ -4611,6 +4631,11 @@ ho:file_expense_reports rdf:type owl:Class ;
 ho:find_dictionary rdf:type owl:Class ;
                    rdfs:subClassOf ho:Other ;
                    rdfs:comment "The class with sequence of actions for finding the dictionary, in any room search." .
+
+
+###  http://www.owl-ontologies.com/VirtualHome.owl#find_some_food
+ho:find_some_food rdf:type owl:Class ;
+                  rdfs:subClassOf ho:FoodPreparation .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#fix_bowl_of_cereal
@@ -5814,6 +5839,11 @@ ho:prepare_sandwitch rdf:type owl:Class ;
                      rdfs:comment "The class with sequence of actions for preparing a sandwich." .
 
 
+###  http://www.owl-ontologies.com/VirtualHome.owl#prepare_sitting
+ho:prepare_sitting rdf:type owl:Class ;
+                   rdfs:subClassOf ho:HouseArrangement .
+
+
 ###  http://www.owl-ontologies.com/VirtualHome.owl#pretend_tea
 ho:pretend_tea rdf:type owl:Class ;
                rdfs:subClassOf ho:Other ;
@@ -6674,6 +6704,11 @@ ho:tabletop_game rdf:type owl:Class ;
 games).""" .
 
 
+###  http://www.owl-ontologies.com/VirtualHome.owl#take_a_nap
+ho:take_a_nap rdf:type owl:Class ;
+              rdfs:subClassOf ho:BedTimeSleep .
+
+
 ###  http://www.owl-ontologies.com/VirtualHome.owl#take_bath
 ho:take_bath rdf:type owl:Class ;
              rdfs:subClassOf ho:HygieneStyling ;
@@ -6709,6 +6744,11 @@ ho:take_nap rdf:type owl:Class ;
 ho:take_of_outerwear rdf:type owl:Class ;
                      rdfs:subClassOf ho:Other ;
                      rdfs:comment "The class with sequence of actions for taking of outerwear." .
+
+
+###  http://www.owl-ontologies.com/VirtualHome.owl#take_off_clock
+ho:take_off_clock rdf:type owl:Class ;
+                  rdfs:subClassOf ho:HouseArrangement .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#take_off_coat
@@ -7021,6 +7061,11 @@ ho:use_restroom rdf:type owl:Class ;
                 rdfs:comment "The class with sequence of actions for using the restroom." .
 
 
+###  http://www.owl-ontologies.com/VirtualHome.owl#use_smartphone
+ho:use_smartphone rdf:type owl:Class ;
+                  rdfs:subClassOf ho:Leisure .
+
+
 ###  http://www.owl-ontologies.com/VirtualHome.owl#use_toilet
 ho:use_toilet rdf:type owl:Class ;
               rdfs:subClassOf ho:HygieneStyling ;
@@ -7091,7 +7136,8 @@ back.""" .
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#wash_clothes
 ho:wash_clothes rdf:type owl:Class ;
-                rdfs:subClassOf ho:HouseArrangement ;
+                rdfs:subClassOf ho:HouseArrangement ,
+                                ho:HouseCleaning ;
                 rdfs:comment "Class with sequences for washing clothes." .
 
 
@@ -7147,6 +7193,11 @@ ho:wash_hands rdf:type owl:Class ;
 ho:wash_monitor rdf:type owl:Class ;
                 rdfs:subClassOf ho:HouseCleaning ;
                 rdfs:comment "The class with sequence of actions for washing a some kind of monitor." .
+
+
+###  http://www.owl-ontologies.com/VirtualHome.owl#wash_pillow
+ho:wash_pillow rdf:type owl:Class ;
+               rdfs:subClassOf ho:HouseCleaning .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#wash_sink
