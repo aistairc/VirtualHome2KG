@@ -1,2 +1,0 @@
-<char0> [WALK] <bathroom> (11)
-<char0> [RUN] <toilet> (46)

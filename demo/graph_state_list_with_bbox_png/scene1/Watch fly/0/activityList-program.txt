@@ -1,5 +1,0 @@
-<char0> [WALK] <bedroom> (75)
-<char0> [WALK] <fly> (1000)
-<char0> [FIND] <fly> (1000)
-<char0> [TURNTO] <fly> (1000)
-<char0> [LOOKAT] <fly> (1000)

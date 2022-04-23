@@ -1,3 +1,0 @@
-<char0> [WALK] <home_office> (336)
-<char0> [WALK] <dining_room> (208)
-<char0> [WALK] <home_office> (336)

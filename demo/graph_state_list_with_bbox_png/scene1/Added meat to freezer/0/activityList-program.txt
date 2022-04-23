@@ -1,8 +1,0 @@
-<char0> [WALK] <dining_room> (208)
-<char0> [WALK] <freezer> (306)
-<char0> [FIND] <freezer> (306)
-<char0> [OPEN] <freezer> (306)
-<char0> [FIND] <food_food> (1000)
-<char0> [GRAB] <food_food> (1000)
-<char0> [PUTBACK] <food_food> (1000) <freezer> (306)
-<char0> [CLOSE] <freezer> (306)

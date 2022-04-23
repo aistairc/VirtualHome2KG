@@ -1,2 +1,0 @@
-Open door
-Open the door when leaving or coming in.

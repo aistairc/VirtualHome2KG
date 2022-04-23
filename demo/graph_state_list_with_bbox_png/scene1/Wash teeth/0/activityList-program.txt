@@ -1,7 +1,0 @@
-<char0> [WALK] <bathroom> (11)
-<char0> [WALK] <toothbrush_holder> (1002)
-<char0> [FIND] <toothbrush_holder> (1002)
-<char0> [FIND] <tooth_paste> (1000)
-<char0> [GRAB] <tooth_paste> (1000)
-<char0> [FIND] <toothbrush> (1001)
-<char0> [GRAB] <toothbrush> (1001)

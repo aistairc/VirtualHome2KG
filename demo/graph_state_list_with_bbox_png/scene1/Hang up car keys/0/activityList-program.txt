@@ -1,7 +1,0 @@
-<char0> [WALK] <home_office> (336)
-<char0> [WALK] <purse> (1000)
-<char0> [FIND] <purse> (1000)
-<char0> [OPEN] <purse> (1000)
-<char0> [FIND] <keys> (1001)
-<char0> [GRAB] <keys> (1001)
-<char0> [CLOSE] <purse> (1000)

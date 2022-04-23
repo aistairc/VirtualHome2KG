@@ -1,7 +1,0 @@
-<char0> [WALK] <home_office> (336)
-<char0> [WALK] <board_game> (1000)
-<char0> [FIND] <board_game> (1000)
-<char0> [GRAB] <board_game> (1000)
-<char0> [WALK] <dining_room> (208)
-<char0> [WALK] <table> (232)
-<char0> [PUTBACK] <board_game> (1000) <table> (232)
