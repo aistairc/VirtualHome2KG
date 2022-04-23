@@ -2,7 +2,7 @@
 @prefix ac: <http://example.org/virtualhome2kg/ontology/action/> .
 @prefix ho: <http://www.owl-ontologies.com/VirtualHome.owl#> .
 @prefix ob: <http://raw.githubusercontent.com/aistairc/HomeObjectOntology/main/HomeObject.owl#> .
-@prefix hra: <http://example.org/virtualhome2kg/ontology/homeriskactivitiy/> .
+@prefix hra: <http://example.org/virtualhome2kg/ontology/homeriskactivity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -340,10 +340,10 @@ If an agent pours milk into a glass, the value of the value of the targetObject 
 :weight rdf:type owl:ObjectProperty .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/riskFactor
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/riskFactor
 hra:riskFactor rdf:type owl:ObjectProperty ;
                rdfs:domain hra:RiskActivity ;
-               rdfs:range <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
+               rdfs:range hra:RiskEvent .
 
 
 ###  http://www.owl-ontologies.com/VirtualHome.owl#object
@@ -433,7 +433,8 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/virtualhome2kg/ontology/GrabLowPositionObject
 :GrabLowPositionObject rdf:type owl:Class ;
-                       rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
+                       rdfs:subClassOf hra:RiskEvent ;
+                       rdfs:label "Take an object out of the low shelves"@en .
 
 
 ###  http://example.org/virtualhome2kg/ontology/RiskAction
@@ -463,64 +464,65 @@ x3do:bboxSize rdf:type owl:DatatypeProperty ;
 :VirtualHome rdf:type owl:Class .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/CarryHeavyObject
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/CarryHeavyObject
 hra:CarryHeavyObject rdf:type owl:Class ;
-                     rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
+                     rdfs:subClassOf hra:RiskEvent ;
+                     rdfs:label "Carry a heavy object"@en .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/DoSomethingToHighPositionObject
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/ClimbObject
+hra:ClimbObject rdf:type owl:Class ;
+                rdfs:subClassOf hra:RiskEvent ;
+                rdfs:label "Climb an object"@en .
+
+
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/DoSomethingToHighPositionObject
 hra:DoSomethingToHighPositionObject rdf:type owl:Class ;
-                                    rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
+                                    rdfs:subClassOf hra:RiskEvent ;
+                                    rdfs:label "Reach an object that is in the high place"@en .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/ObjectPlacedOnAisle
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/ObjectPlacedOnAisle
 hra:ObjectPlacedOnAisle rdf:type owl:Class ;
                         rdfs:subClassOf hra:RiskState .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/PickUpObjectWhileSitting
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/PickUpObjectWhileSitting
 hra:PickUpObjectWhileSitting rdf:type owl:Class ;
-                             rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
+                             rdfs:subClassOf hra:RiskEvent ;
+                             rdfs:label "Pick up an object on the floor"@en .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/RiskActivity
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskActivity
 hra:RiskActivity rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Restriction ;
                                        owl:onProperty hra:riskFactor ;
                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent>
+                                       owl:onClass hra:RiskEvent
                                      ] ;
                  rdfs:subClassOf ho:Activity .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/RiskSituation
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent
+hra:RiskEvent rdf:type owl:Class ;
+              rdfs:subClassOf :Event ;
+              rdfs:label "Risk Event"@en .
+
+
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskSituation
 hra:RiskSituation rdf:type owl:Class ;
                   rdfs:subClassOf :Situation .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivitiy/RiskState
+###  http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskState
 hra:RiskState rdf:type owl:Class ;
               rdfs:subClassOf ob:State .
 
 
-###  http://example.org/virtualhome2kg/ontology/homeriskactivity/ClimbObject
-<http://example.org/virtualhome2kg/ontology/homeriskactivity/ClimbObject> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
-
-
-###  http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent
-<http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf :Event .
-
-
-###  http://example.org/virtualhome2kg/ontology/homeriskactivity/StraddleObject
-<http://example.org/virtualhome2kg/ontology/homeriskactivity/StraddleObject> rdf:type owl:Class ;
-                                                                             rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
-
-
 ###  http://example.org/virtualhome2kg/ontology/homeriskactivity/StrideOverObject
-<http://example.org/virtualhome2kg/ontology/homeriskactivity/StrideOverObject> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf <http://example.org/virtualhome2kg/ontology/homeriskactivity/RiskEvent> .
+hra:StrideOverObject rdf:type owl:Class ;
+                     rdfs:subClassOf hra:RiskEvent ;
+                     rdfs:label "Stride over an object"@en .
 
 
 ###  http://plod.info/rdf/Episode
@@ -8783,7 +8785,7 @@ x3do:SFVec3f <http://purl.org/dc/terms/description> "SFVec3d is a 3-tuple triple
                                          ] ;
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://example.org/virtualhome2kg/ontology/homeriskactivity/ClimbObject> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> hra:ClimbObject ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#e>
                                                      ] ;
                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -8848,7 +8850,7 @@ x3do:SFVec3f <http://purl.org/dc/terms/description> "SFVec3d is a 3-tuple triple
                                          ] ;
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://example.org/virtualhome2kg/ontology/homeriskactivity/StrideOverObject> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> hra:StrideOverObject ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#e>
                                                      ] ;
                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -9135,15 +9137,15 @@ x3do:SFVec3f <http://purl.org/dc/terms/description> "SFVec3d is a 3-tuple triple
                                                     ]
                                          ] ;
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> hra:riskFactor ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#st> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#so>
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> hra:ObjectPlacedOnAisle ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#so>
                                                      ] ;
                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> hra:ObjectPlacedOnAisle ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#so>
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> hra:riskFactor ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#st> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#so>
                                                                 ] ;
                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
