@@ -7,7 +7,7 @@ Please see the original repository of the [virtualhome](https://github.com/xavie
 1. Overview
 2. Set Up
 3. How to use
-4. Ontology
+4. Schema
 <!--5. Knowledge graphs-->
 
 ## Overview
