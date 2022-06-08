@@ -76,39 +76,18 @@ cd scripts
 python create_rdf.py [activity name (folder name of the simulation results)]
 ```-->
 Jupyter notebook:  
-Run [demo/create_rdf.ipyb](demo/create_rdf.ipynb)  
-Run [demo/create_rdf_r2.ipyb (Beta version)](demo/create_rdf_r2.ipynb)
+Run [demo/create_rdf_r3.ipyb](demo/create_rdf_r3.ipynb)
   
 If you want to generate RDF file containing objects' bbox.  
 Jupyter notebook:  
-Run [demo/create_rdf_with_bbox.ipyb](demo/create_rdf_with_bbox.ipynb)  
-Run [demo/create_rdf_r2_bbox.ipyb (Beta version)](demo/create_rdf_r2_bbox.ipynb)
+Run [demo/create_rdf_r3_bbox.ipyb](demo/create_rdf_r3_bbox.ipynb)
 
 ### Add location information (Rooms)
 Jupyter notebook:   
-Run [demo/add_places.ipynb (Beta version)](demo/add_places.ipynb)
+Run [demo/add_places.ipynb](demo/add_places.ipynb)
 
-### Generate activity sequences (Episodes)
-<!--Script:  
-```bash
-cd scripts
-python markov_chain.py
-```-->
-Jupyter notebook:  
-Run [demo/markov_chain.ipynb](demo/markov_chain.ipynb)  
-Run [demo/markov_chain_amt.ipynb (Beta version)](demo/markov_chain_amt.ipynb)
-
-### Augment knowledge graphs
-<!--```bash
-cd scripts
-python behavioral_data_augmentation.py
-```-->
-Jupyter notebook:  
-Run [demo/behavioral_data_augmentation.ipynb](demo/behavioral_data_augmentation.ipynb)  
-Run [demo/create_episode_rdf.ipynb (Beta version)](demo/create_episode_rdf.ipynb)
-
-## Ontology
-We designed the ontology for the VirtualHome2KG. Please see [here](ontology) for learing more about our ontology.
+## Knowledge graph schema
+We designed the knowledge graph schema for the VirtualHome2KG. Please see [here](ontology) for learing more about our schema.
 
 ## Publications
 ### International Conference (Peer Reviewed)
