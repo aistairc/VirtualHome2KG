@@ -199,3 +199,5 @@ demo/evaluate*
 ontology/vh2kg_ontology_r2.tex
 *.mp4
 *.app
+demo/kgrc
+demo/kgrc4si.zip
