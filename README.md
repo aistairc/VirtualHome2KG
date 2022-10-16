@@ -1,5 +1,5 @@
 # VirtualHome2KG
-[Japanese](./README_ja.md)
+[[Japanese]](./README_ja.md)
 
 VirtualHome2KG is a system for constructing and augmenting knowledge graphs (KGs) of daily living activities using virtual space. We also provide an ontology to describe the structure of the KGs.
 We used [VirtualHome](http://virtual-home.org/) as a platform of virtual space simulation. Thus, this repository is an extension of the [virtualhome](https://github.com/xavierpuigf/virtualhome).
