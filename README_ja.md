@@ -128,8 +128,7 @@ Egami, S., Nishimura, S., Fukuda, K.: VirtualHome2KG: Constructing and Augmentin
 江上周作，鵜飼孝典，窪田文也，大野美喜子，北村光司，福田賢一郎: 家庭内の事故予防に向けた合成ナレッジグラフの構築と推論，第56回人工知能学会セマンティックウェブとオントロジー研究会, SIG-SWO-056-14 (2022) [[J-STAGE]](https://www.jstage.jst.go.jp/article/jsaisigtwo/2022/SWO-056/2022_14/_article/-char/ja)
 
 ## ライセンス
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">VirtualHome2KG</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/aistairc/virtualhome2kg/" property="cc:attributionName" rel="cc:attributionURL">Shusaku Egami, Satoshi Nishimura, Ken Fukuda</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/xavierpuigf/virtualhome" rel="dct:source">https://github.com/xavierpuigf/virtualhome</a>.
+[MIT License](LICENSE)
 
 ## 謝辞
 この成果は，国立研究開発法人新エネルギー・産業技術総合開発機構(NEDO)の委託業務(JPNP20006, JPNP180013)の結果得られたものです．
