@@ -114,7 +114,7 @@ run [demo/markov_chain.ipynb](https://github.com/aistairc/VirtualHome2KG/blob/ma
 run [demo/create_episode_rdf.ipynb](https://github.com/aistairc/VirtualHome2KG/blob/main/demo/create_episode_rdf.ipynb)
 
 ## 生成した動画・ナレッジグラフの説明
-[こちら](https://github.com/KnowledgeGraphJapan/KGRC-RDF/blob/kgrc4si/extended_readme.md#%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%82%B0%E3%83%A9%E3%83%95%E3%81%AE%E8%AA%AC%E6%98%8E)をご覧ください．
+[こちら](https://github.com/KnowledgeGraphJapan/KGRC-RDF/blob/kgrc4si/extended_readme.md#%E6%8F%90%E6%A1%88%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88)をご覧ください．
 
 ## Publications
 ### 査読付き国際会議
