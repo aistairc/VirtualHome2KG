@@ -119,7 +119,7 @@ run [demo/create_episode_rdf.ipynb](https://github.com/aistairc/VirtualHome2KG/b
 ## Publications
 ### 査読付き学術論文誌
 
-Egami, S.. Ugai, T., Oono, M., Kitamura, K., Fukuda.: Synthesizing Event-centric Knowledge Graphs of Daily Activities using Virtual Space. IEEE Access, Early Access. doi: [https://doi.org/10.1109/ACCESS.2023.3253807](https://doi.org/10.1109/ACCESS.2023.3253807) (2023)
+Egami, S., Ugai, T., Oono, M., Kitamura, K., Fukuda.: Synthesizing Event-centric Knowledge Graphs of Daily Activities using Virtual Space. IEEE Access, Early Access. doi: [https://doi.org/10.1109/ACCESS.2023.3253807](https://doi.org/10.1109/ACCESS.2023.3253807) (2023)
 
 ### 査読付き国際会議
 
