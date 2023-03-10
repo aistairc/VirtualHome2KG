@@ -117,6 +117,10 @@ run [demo/create_episode_rdf.ipynb](https://github.com/aistairc/VirtualHome2KG/b
 [こちら](https://github.com/KnowledgeGraphJapan/KGRC-RDF/blob/kgrc4si/extended_readme.md#%E6%8F%90%E6%A1%88%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88)をご覧ください．
 
 ## Publications
+### 査読付き学術論文誌
+
+Egami, S.. Ugai, T., Oono, M., Kitamura, K., Fukuda.: Synthesizing Event-centric Knowledge Graphs of Daily Activities using Virtual Space. IEEE Access, Early Access. doi: [https://doi.org/10.1109/ACCESS.2023.3253807](https://doi.org/10.1109/ACCESS.2023.3253807) (2023)
+
 ### 査読付き国際会議
 
 Egami, S., Nishimura, S., Fukuda, K.: A Framework for Constructing and Augmenting Knowledge Graphs using Virtual Space: Towards Analysis of Daily Activities. Proceedings of the 33rd IEEE International Conference on Tools with Artificial Intelligence. pp.1226-1230 (2021) [[IEEE Xplore]](https://ieeexplore.ieee.org/document/9643400)
