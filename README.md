@@ -15,7 +15,7 @@ Please see the original repository of the [virtualhome](https://github.com/xavie
 ![overview](image/overview.png "Overview of VirtualHome2KG")
 
 ## Versions
-- [Beta version](https://github.com/aistairc/VirtualHome2KG/):  new schema (Event-centric. under submission)  
+- [Beta version](https://github.com/aistairc/VirtualHome2KG/):  new schema (Event-centric. [more information](https://doi.org/10.1109/ACCESS.2023.3253807))  
 - [stable version](https://github.com/aistairc/VirtualHome2KG/tree/bcfa5b7b06af046c70d7d41c454ad7f9610ecbd2): old schema (Activity-centric. presented at ISWC2021 Poster, ICTAI2021 Short paper)
 
 ## Set Up
@@ -91,6 +91,8 @@ We designed the knowledge graph schema for the VirtualHome2KG. Please see [here]
 
 ## Publications
 ### International Conference (Peer Reviewed)
+
+Egami, S.. Ugai, T., Oono, M., Kitamura, K., Fukuda.: Synthesizing Event-centric Knowledge Graphs of Daily Activities using Virtual Space. IEEE Access, Early Access. doi: [https://doi.org/10.1109/ACCESS.2023.3253807](https://doi.org/10.1109/ACCESS.2023.3253807) (2023)
 
 Egami, S., Nishimura, S., Fukuda, K.: A Framework for Constructing and Augmenting Knowledge Graphs using Virtual Space: Towards Analysis of Daily Activities. Proceedings of the 33rd IEEE International Conference on Tools with Artificial Intelligence. pp.1226-1230 (2021) [[IEEE Xplore]](https://ieeexplore.ieee.org/document/9643400)
 
