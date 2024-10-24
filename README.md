@@ -88,6 +88,10 @@ Run [demo/create_rdf_r3_bbox.ipyb](demo/create_rdf_r3_bbox.ipynb)
 Jupyter notebook:   
 Run [demo/add_places.ipynb](demo/add_places.ipynb)
 
+### Visualization tool
+A visualization tool is available.
+[https://github.com/aistairc/virtualhome2kg_visualization](https://github.com/aistairc/virtualhome2kg_visualization)
+
 ## Knowledge graph schema
 We designed the knowledge graph schema for the VirtualHome2KG. Please see [here](ontology) for learing more about our schema.
 
